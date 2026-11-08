@@ -1,0 +1,14 @@
+{"seq": 1, "ts": "2026-11-08T05:25:53.246+00:00", "type": "discovery_started", "goal": "[omitted: see reviewed goal_template]", "model": "gemini-3.5-flash", "tenant": "harbor"}
+{"seq": 2, "ts": "2026-11-08T05:25:53.247+00:00", "type": "session_login", "product": "mockcore"}
+{"seq": 3, "ts": "2026-11-08T05:25:53.255+00:00", "type": "step_started", "step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id"}
+{"seq": 4, "ts": "2026-11-08T05:25:53.724+00:00", "type": "policy_check", "step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null}
+{"seq": 5, "ts": "2026-11-08T05:25:53.742+00:00", "type": "step_ok", "step": "login_user_id", "ms": 486, "locator": "role(role='textbox', name='User ID')"}
+{"seq": 6, "ts": "2026-11-08T05:25:53.742+00:00", "type": "step_started", "step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password"}
+{"seq": 7, "ts": "2026-11-08T05:25:53.749+00:00", "type": "policy_check", "step": "login_password", "allowed": true, "risk": "reversible", "reason": null}
+{"seq": 8, "ts": "2026-11-08T05:25:53.774+00:00", "type": "step_ok", "step": "login_password", "ms": 32, "locator": "role(role='textbox', name='Password')"}
+{"seq": 9, "ts": "2026-11-08T05:25:53.774+00:00", "type": "step_started", "step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on"}
+{"seq": 10, "ts": "2026-11-08T05:25:53.781+00:00", "type": "policy_check", "step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null}
+{"seq": 11, "ts": "2026-11-08T05:25:54.301+00:00", "type": "step_ok", "step": "login_sign_on", "ms": 526, "locator": "role(role='button', name='Sign On')"}
+{"seq": 12, "ts": "2026-11-08T05:25:54.314+00:00", "type": "session_established"}
+{"seq": 13, "ts": "2026-11-08T05:25:54.831+00:00", "type": "llm_error", "attempt": 1, "status": 402, "error": "402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}", "transient": false}
+{"seq": 14, "ts": "2026-11-08T05:25:54.832+00:00", "type": "discovery_finished", "status": "failed", "capability": null, "steps": 0}

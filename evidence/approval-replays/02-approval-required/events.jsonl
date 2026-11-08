@@ -1,0 +1,3 @@
+{"capability": "mockcore.member.open_sub_account", "version": "1.0.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "draft", "seq": 1, "ts": "2026-11-08T05:33:46.183+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›", "account_type": "‹account_type›", "initial_deposit": "‹initial_deposit›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:46.183+00:00", "type": "inputs_validated"}
+{"status": "blocked", "outputs": {}, "outcome": null, "error": "APPROVAL_REQUIRED", "recoveries": 0, "drift": 0, "interventions": 0, "ms": 0, "seq": 3, "ts": "2026-11-08T05:33:46.211+00:00", "type": "replay_finished"}

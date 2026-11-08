@@ -1,0 +1,103 @@
+{
+  "run_id": "replay-20261108-003342-c9db",
+  "mode": "replay",
+  "capability": "mockcore.member.get_savings_balance",
+  "capability_version": "1.1.0",
+  "tenant": "harbor",
+  "status": "succeeded",
+  "outputs": {
+    "savings_balance": "\u2039savings_balance\u203a"
+  },
+  "steps": [
+    {
+      "step_id": "login_user_id",
+      "status": "ok",
+      "locator": "role(role='textbox', name='User ID')",
+      "attempts": 1,
+      "duration_ms": 497
+    },
+    {
+      "step_id": "login_password",
+      "status": "ok",
+      "locator": "role(role='textbox', name='Password')",
+      "attempts": 1,
+      "duration_ms": 34
+    },
+    {
+      "step_id": "login_sign_on",
+      "status": "ok",
+      "locator": "role(role='button', name='Sign On')",
+      "attempts": 1,
+      "duration_ms": 546
+    },
+    {
+      "step_id": "click_member_inquiry",
+      "status": "ok",
+      "locator": "role(role='link', name='Member Inquiry')",
+      "attempts": 1,
+      "duration_ms": 546
+    },
+    {
+      "step_id": "fill_member_number",
+      "status": "ok",
+      "locator": "role(role='textbox', name='Member Number')",
+      "attempts": 1,
+      "duration_ms": 38
+    },
+    {
+      "step_id": "click_search",
+      "status": "ok",
+      "locator": "role(role='button', name='Search')",
+      "attempts": 1,
+      "duration_ms": 559
+    },
+    {
+      "step_id": "click_member_inquiry",
+      "status": "ok",
+      "locator": "role(role='link', name='Member Inquiry')",
+      "attempts": 1,
+      "duration_ms": 522
+    },
+    {
+      "step_id": "fill_member_number",
+      "status": "ok",
+      "locator": "role(role='textbox', name='Member Number')",
+      "attempts": 1,
+      "duration_ms": 31
+    },
+    {
+      "step_id": "click_search",
+      "status": "ok",
+      "locator": "role(role='button', name='Search')",
+      "attempts": 1,
+      "duration_ms": 535
+    },
+    {
+      "step_id": "click_select",
+      "status": "ok",
+      "locator": "role(role='link', name='Select', row_text='{member_id}')",
+      "attempts": 1,
+      "duration_ms": 528
+    },
+    {
+      "step_id": "extract_savings_balance",
+      "status": "ok",
+      "locator": "table_cell(column='Balance', row_key={'column': 'Description', 'value': 'Share Savings', 'match': 'exact'})",
+      "attempts": 1,
+      "duration_ms": 32
+    }
+  ],
+  "recoveries": [
+    {
+      "outcome_id": "core_system_error",
+      "step_id": "click_select",
+      "strategy": "restart",
+      "succeeded": true,
+      "detail": ""
+    }
+  ],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 4908,
+  "evidence_dir": "evidence/replays/09-recovered-transient-app-error"
+}

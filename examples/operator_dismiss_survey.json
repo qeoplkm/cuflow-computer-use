@@ -1,0 +1,6 @@
+{
+  "operator_id": "ops-anna",
+  "actions": [{"action": "click", "frame": "work", "role": "button", "name": "Not Now"}],
+  "decision": "resume",
+  "note": "Unknown 'member experience' prompt; chose Not Now (sending a survey is not part of this task)."
+}

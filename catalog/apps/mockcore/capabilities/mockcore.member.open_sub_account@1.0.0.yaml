@@ -1,0 +1,253 @@
+schema_version: cuflow.capability/v1
+id: mockcore.member.open_sub_account
+version: 1.0.0
+title: Member open sub account
+description: Opens a new sub-account for a specified member with an account type and initial deposit.
+app: {product: mockcore, versions: '>=4.0,<5', surface: web}
+requires_session: true
+inputs:
+- {name: member_id, type: string, description: Member ID, pattern: ^\d+$, sensitivity: pii}
+- {name: account_type, type: string, description: Sub-account type to open, sensitivity: pii}
+- {name: initial_deposit, type: string, description: Initial deposit amount, sensitivity: pii}
+outputs: []
+side_effects: irreversible
+targets:
+  member_inquiry_link:
+    description: Member Inquiry link
+    frame: nav
+    locators:
+    - {by: role, role: link, name: Member Inquiry}
+    - by: attr
+      tag: a
+      attrs: {href: /work/inquiry}
+    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td > a'}
+    bbox_hint: {x: 12, y: 38, w: 111, h: 17}
+  member_number_text_box:
+    description: Member Number text box
+    frame: work
+    locators:
+    - {by: role, role: textbox, name: Member Number}
+    - by: attr
+      tag: input
+      attrs: {name: fld_mbr_no}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > input
+    bbox_hint: {x: 142, y: 42, w: 69, h: 21}
+  search_button:
+    description: Search button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Search}
+    - by: attr
+      tag: input
+      attrs: {name: btn_srch}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input:nth-of-type(1)
+    bbox_hint: {x: 142, y: 96, w: 58, h: 21}
+  select_link:
+    description: Select link
+    frame: work
+    locators:
+    - {by: role, role: link, name: Select, row_text: '{member_id}'}
+    - by: attr
+      tag: a
+      attrs: {href: '/work/member?m={member_id}&t=*'}
+    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td:nth-of-type(4) > a'}
+    bbox_hint: {x: 304, y: 165, w: 44, h: 17}
+  open_sub_account_button:
+    description: Open Sub-Account button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Open Sub-Account}
+    - {by: css, css: 'body > font > input:nth-of-type(1)'}
+    bbox_hint: {x: 8, y: 335, w: 129, h: 21}
+  account_type_drop_down:
+    description: Account Type drop-down
+    frame: work
+    locators:
+    - {by: role, role: combobox, name: Account Type}
+    - by: attr
+      tag: select
+      attrs: {name: fld_typ}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > select
+    bbox_hint: {x: 135, y: 42, w: 147, h: 19}
+  initial_deposit_text_box:
+    description: Initial Deposit text box
+    frame: work
+    locators:
+    - {by: role, role: textbox, name: Initial Deposit}
+    - by: attr
+      tag: input
+      attrs: {name: fld_amt}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input
+    bbox_hint: {x: 135, y: 94, w: 83, h: 21}
+  continue_button:
+    description: Continue button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Continue}
+    - by: attr
+      tag: input
+      attrs: {name: btn_cont}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(5) > td:nth-of-type(2) > input:nth-of-type(1)
+    bbox_hint: {x: 135, y: 146, w: 69, h: 21}
+  submit_button:
+    description: Submit button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Submit}
+    - {by: css, css: 'body > font > form > input:nth-of-type(2)'}
+    bbox_hint: {x: 8, y: 215, w: 58, h: 21}
+steps:
+- id: click_member_inquiry
+  intent: Navigate to Member Inquiry to look up member {member_id}
+  action:
+    type: click
+    target: {ref: member_inquiry_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/inquiry
+      frame: work
+      ignore_query: []
+    - kind: element
+      target: {ref: member_number_text_box}
+  actor: agent
+- id: fill_member_number
+  intent: Enter member ID to search
+  action:
+    type: fill
+    target: {ref: member_number_text_box}
+    value: {param: member_id}
+  risk: safe
+  idempotent: true
+  actor: agent
+- id: click_search
+  intent: Search for member {member_id}
+  action:
+    type: click
+    target: {ref: search_button}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: element
+    target: {ref: select_link}
+  actor: agent
+- id: click_select
+  intent: Select member {member_id} from search results
+  action:
+    type: click
+    target: {ref: select_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/member?m={member_id}&t=*
+      frame: work
+      ignore_query:
+      - t
+    - kind: element
+      target: {ref: open_sub_account_button}
+  actor: agent
+- id: click_open_sub_account
+  intent: Open the sub-account creation form for this member
+  action:
+    type: click
+    target: {ref: open_sub_account_button}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/subacct?m={member_id}
+      frame: work
+      ignore_query: []
+    - kind: element
+      target: {ref: account_type_drop_down}
+  actor: agent
+- id: select_account_type
+  intent: Select {account_type} as the account type
+  action:
+    type: select
+    target: {ref: account_type_drop_down}
+    option: {param: account_type}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: element
+    target: {ref: initial_deposit_text_box}
+  actor: agent
+- id: fill_initial_deposit
+  intent: Enter initial deposit amount
+  action:
+    type: fill
+    target: {ref: initial_deposit_text_box}
+    value: {param: initial_deposit}
+  risk: safe
+  idempotent: true
+  actor: agent
+- id: click_continue
+  intent: Proceed to next step for sub-account opening
+  action:
+    type: click
+    target: {ref: continue_button}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/subacct
+      frame: work
+      ignore_query: []
+    - kind: element
+      target: {ref: submit_button}
+  actor: agent
+- id: click_submit
+  intent: Submit sub-account opening request
+  action:
+    type: click
+    target: {ref: submit_button}
+  risk: irreversible
+  idempotent: false
+  expect:
+    kind: location
+    pattern: /work/subacct/submit
+    frame: work
+    ignore_query: []
+  actor: agent
+success:
+  kind: all
+  of:
+  - {kind: text, pattern: SUB-ACCOUNT OPENED, frame: work}
+  - kind: location
+    pattern: /work/subacct/submit
+    frame: work
+    ignore_query: []
+outcomes: []
+review:
+  status: draft
+  notes:
+  - 'inputs.member_id: pattern ^\d+$ inferred from a single example; tighten it if the app enforces a format.'
+  - 'Outcomes: discovery only observed the happy path. Add the business outcomes and error states this flow can
+    hit (not found, validation, restricted) before approving.'
+provenance:
+  method: llm_discovery
+  recorded_at: '2026-11-08T05:32:40.648+00:00'
+  run_id: discovery-20261108-003207-3960
+  model: gemini-3.5-flash
+  tenant: harbor
+  app_version: 4.2.1
+  goal_template: Look up member {member_id} first, then from that member's record open a {account_type} sub-account
+    with an initial deposit of {initial_deposit}. Submit after supervisor approval and reach SUB-ACCOUNT OPENED.
+    Use member_id, account_type and initial_deposit as input names, and member.open_sub_account as the capability
+    name.

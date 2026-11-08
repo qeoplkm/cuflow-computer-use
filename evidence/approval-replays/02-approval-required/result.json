@@ -1,0 +1,22 @@
+{
+  "run_id": "replay-20261108-003345-5d38",
+  "mode": "replay",
+  "capability": "mockcore.member.open_sub_account",
+  "capability_version": "1.0.0",
+  "tenant": "harbor",
+  "status": "blocked",
+  "outputs": {},
+  "error": {
+    "code": "APPROVAL_REQUIRED",
+    "message": "step 'click_submit' is irreversible (Submit sub-account opening request); pass an explicit approval or attach an operator. Nothing was executed.",
+    "step_id": "click_submit",
+    "step_intent": "Submit sub-account opening request",
+    "retryable": false
+  },
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 0,
+  "evidence_dir": "evidence/approval-replays/02-approval-required"
+}

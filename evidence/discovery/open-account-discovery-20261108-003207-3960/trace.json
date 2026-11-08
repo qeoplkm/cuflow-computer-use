@@ -1,0 +1,454 @@
+[
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to look up member ‹pii›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/home"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "fill",
+    "intent": "Enter member ID to search",
+    "frame": "work",
+    "target": {
+      "description": "Member Number text box",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "textbox",
+          "name": "Member Number",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "fld_mbr_no"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > input"
+        }
+      ],
+      "bbox_hint": {
+        "x": 142,
+        "y": 42,
+        "w": 69,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": {
+      "param": "member_id"
+    },
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Search for member ‹pii›",
+    "frame": "work",
+    "target": {
+      "description": "Search button",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "button",
+          "name": "Search",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "btn_srch"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input:nth-of-type(1)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 142,
+        "y": 96,
+        "w": 58,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Select member ‹pii› from search results",
+    "frame": "work",
+    "target": {
+      "description": "Select link",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Select",
+          "match": "exact",
+          "row_text": "{member_id}"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/member?m={member_id}&t=‹token›"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td:nth-of-type(4) > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 304,
+        "y": 165,
+        "w": 44,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/member?m=‹pii›&t=‹token›"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Open the sub-account creation form for this member",
+    "frame": "work",
+    "target": {
+      "description": "Open Sub-Account button",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "button",
+          "name": "Open Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > input:nth-of-type(1)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 8,
+        "y": 335,
+        "w": 129,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/member?m=‹pii›&t=‹token›"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "select",
+    "intent": "Select ‹account_type› as the account type",
+    "frame": "work",
+    "target": {
+      "description": "Account Type drop-down",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "combobox",
+          "name": "Account Type",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "select",
+          "attrs": {
+            "name": "fld_typ"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > select"
+        }
+      ],
+      "bbox_hint": {
+        "x": 135,
+        "y": 42,
+        "w": 147,
+        "h": 19
+      }
+    },
+    "risk": "safe",
+    "value": {
+      "param": "account_type"
+    },
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "fill",
+    "intent": "Enter initial deposit amount",
+    "frame": "work",
+    "target": {
+      "description": "Initial Deposit text box",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "textbox",
+          "name": "Initial Deposit",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "fld_amt"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input"
+        }
+      ],
+      "bbox_hint": {
+        "x": 135,
+        "y": 94,
+        "w": 83,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": {
+      "param": "initial_deposit"
+    },
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Proceed to next step for sub-account opening",
+    "frame": "work",
+    "target": {
+      "description": "Continue button",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "button",
+          "name": "Continue",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "btn_cont"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(5) > td:nth-of-type(2) > input:nth-of-type(1)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 135,
+        "y": 146,
+        "w": 69,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct?m=‹pii›"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Submit sub-account opening request",
+    "frame": "work",
+    "target": {
+      "description": "Submit button",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "button",
+          "name": "Submit",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > input:nth-of-type(2)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 8,
+        "y": 215,
+        "w": 58,
+        "h": 21
+      }
+    },
+    "risk": "irreversible",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62977/main",
+      "banner": "http://127.0.0.1:62977/banner",
+      "nav": "http://127.0.0.1:62977/nav",
+      "work": "http://127.0.0.1:62977/work/subacct/submit"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "run_id": "discovery-20261108-002552-a4ef",
+  "mode": "discovery",
+  "tenant": "harbor",
+  "status": "failed",
+  "outputs": {},
+  "error": {
+    "code": "MODEL_ERROR",
+    "message": "model call failed: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}",
+    "retryable": false
+  },
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 1584,
+  "evidence_dir": "evidence/discovery/lookup-discovery-20261108-002552-a4ef"
+}

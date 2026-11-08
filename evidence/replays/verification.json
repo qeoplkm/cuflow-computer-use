@@ -1,0 +1,113 @@
+{
+  "capability": "mockcore.member.get_savings_balance",
+  "version": "1.1.0",
+  "artifact_sha256": "125ef338cad3d3a5399a458083d1099653f9c377a64b40cc166faf738d9a05ef",
+  "scenarios": [
+    {
+      "scenario": "01-success",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "02-success-other-member",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "03-business-not-found",
+      "status": "business_outcome",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    },
+    {
+      "scenario": "04-business-restricted",
+      "status": "business_outcome",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    },
+    {
+      "scenario": "05-invalid-input",
+      "status": "failed",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    },
+    {
+      "scenario": "06-recovered-interstitial-and-alert",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "07-recovered-session-expiry",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "08-recovered-slow-load",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "09-recovered-transient-app-error",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "10-failure-app-error",
+      "status": "failed",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    },
+    {
+      "scenario": "11-failure-unrecognized-state",
+      "status": "failed",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    },
+    {
+      "scenario": "12-hitl-unrecognized-state",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "13-tenant-summit-no-override",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 4
+    },
+    {
+      "scenario": "14-tenant-summit-with-override",
+      "status": "succeeded",
+      "checks_passed": true,
+      "output_verified": true,
+      "drift": 0
+    },
+    {
+      "scenario": "15-failure-private-detail",
+      "status": "failed",
+      "checks_passed": true,
+      "output_verified": false,
+      "drift": 0
+    }
+  ],
+  "text_redaction_checked": true
+}

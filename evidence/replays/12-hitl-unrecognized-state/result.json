@@ -1,0 +1,92 @@
+{
+  "run_id": "replay-20261108-003359-0cc6",
+  "mode": "replay",
+  "capability": "mockcore.member.get_savings_balance",
+  "capability_version": "1.1.0",
+  "tenant": "harbor",
+  "status": "succeeded",
+  "outputs": {
+    "savings_balance": "\u2039savings_balance\u203a"
+  },
+  "steps": [
+    {
+      "step_id": "login_user_id",
+      "status": "ok",
+      "locator": "role(role='textbox', name='User ID')",
+      "attempts": 1,
+      "duration_ms": 513
+    },
+    {
+      "step_id": "login_password",
+      "status": "ok",
+      "locator": "role(role='textbox', name='Password')",
+      "attempts": 1,
+      "duration_ms": 33
+    },
+    {
+      "step_id": "login_sign_on",
+      "status": "ok",
+      "locator": "role(role='button', name='Sign On')",
+      "attempts": 1,
+      "duration_ms": 543
+    },
+    {
+      "step_id": "click_member_inquiry",
+      "status": "ok",
+      "locator": "role(role='link', name='Member Inquiry')",
+      "attempts": 1,
+      "duration_ms": 546
+    },
+    {
+      "step_id": "fill_member_number",
+      "status": "ok",
+      "locator": "role(role='textbox', name='Member Number')",
+      "attempts": 1,
+      "duration_ms": 41
+    },
+    {
+      "step_id": "click_search",
+      "status": "ok",
+      "locator": "role(role='button', name='Search')",
+      "attempts": 1,
+      "duration_ms": 528
+    },
+    {
+      "step_id": "click_select",
+      "status": "recovered",
+      "locator": "role(role='link', name='Select', row_text='{member_id}')",
+      "attempts": 1,
+      "duration_ms": 3584
+    },
+    {
+      "step_id": "extract_savings_balance",
+      "status": "ok",
+      "locator": "table_cell(column='Balance', row_key={'column': 'Description', 'value': 'Share Savings', 'match': 'exact'})",
+      "attempts": 1,
+      "duration_ms": 29
+    }
+  ],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [
+    {
+      "id": "int-01",
+      "reason": "screen settled in a state that matches neither the expected postcondition nor any known outcome",
+      "kind": "unrecognized_state",
+      "step_id": "click_select",
+      "operator": "simulated:ops-anna",
+      "resolution": "resume",
+      "note": "Unknown 'member experience' prompt; chose Not Now (sending a survey is not part of this task).",
+      "human_actions": [
+        {
+          "type": "click",
+          "target": "button \"Not Now\"",
+          "frame": "work"
+        }
+      ],
+      "waited_ms": 978
+    }
+  ],
+  "duration_ms": 5853,
+  "evidence_dir": "evidence/replays/12-hitl-unrecognized-state"
+}

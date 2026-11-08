@@ -1,0 +1,96 @@
+--- lookup-discovered.yaml
++++ lookup-reviewed.yaml
+@@ -1,12 +1,12 @@
+ schema_version: cuflow.capability/v1
+ id: mockcore.member.get_savings_balance
+-version: 1.0.0
++version: 1.1.0
+ title: Member get savings balance
+ description: Look up a credit union member by ID and retrieve their Share Savings balance.
+-app: {product: mockcore, versions: '>=4.0,<5', surface: web}
++app: {product: mockcore, versions: '>=4.2,<5', surface: web}
+ requires_session: true
+ inputs:
+-- {name: member_id, type: string, description: Member Number to look up, pattern: ^\d+$, sensitivity: pii}
++- {name: member_id, type: string, description: Member Number to look up, pattern: '^\d{5}$', sensitivity: pii}
+ outputs:
+ - {name: savings_balance, type: money, description: Current Share Savings balance, sensitivity: financial}
+ side_effects: safe
+@@ -19,7 +19,6 @@
+     - by: attr
+       tag: a
+       attrs: {href: /work/inquiry}
+-    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td > a'}
+     bbox_hint: {x: 12, y: 38, w: 111, h: 17}
+   member_number_text_box:
+     description: Member Number text box
+@@ -29,8 +28,6 @@
+     - by: attr
+       tag: input
+       attrs: {name: fld_mbr_no}
+-    - by: css
+-      css: body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > input
+     bbox_hint: {x: 142, y: 42, w: 69, h: 21}
+   search_button:
+     description: Search button
+@@ -40,8 +37,6 @@
+     - by: attr
+       tag: input
+       attrs: {name: btn_srch}
+-    - by: css
+-      css: body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input:nth-of-type(1)
+     bbox_hint: {x: 142, y: 96, w: 58, h: 21}
+   select_link:
+     description: Select link
+@@ -51,7 +46,6 @@
+     - by: attr
+       tag: a
+       attrs: {href: '/work/member?m={member_id}&t=*'}
+-    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td:nth-of-type(4) > a'}
+     bbox_hint: {x: 304, y: 165, w: 44, h: 17}
+   balance_share_savings:
+     description: '"Balance" cell of the row where Description = "Share Savings"'
+@@ -61,8 +55,6 @@
+       column: Balance
+       row_key: {column: Description, value: Share Savings}
+     - {by: table_cell, row_label: '0000', offset: 3}
+-    - by: css
+-      css: body > font > table:nth-of-type(2) > tbody > tr:nth-of-type(2) > td:nth-of-type(4)
+     bbox_hint: {x: 209, y: 241, w: 76, h: 26}
+ steps:
+ - id: click_member_inquiry
+@@ -138,13 +130,29 @@
+     frame: work
+     ignore_query:
+     - t
+-outcomes: []
++outcomes:
++- id: member_not_found
++  kind: business
++  when: {kind: text, pattern: I2001 NO RECORDS MATCH, frame: work}
++  code: MEMBER_NOT_FOUND
++  message: No member matches the given member number
++  retryable: false
++- id: restricted_account
++  kind: business
++  when: {kind: text, pattern: R17 ACCESS DENIED, frame: work}
++  code: ACCOUNT_RESTRICTED
++  message: The member's account is restricted; a supervisor override is required
++  retryable: false
+ review:
+-  status: draft
++  status: approved
++  reviewed_by: Codex-assisted review
++  reviewed_at: '2026-11-08T05:33:10.008+00:00'
+   notes:
+-  - 'inputs.member_id: pattern ^\d+$ inferred from a single example; tighten it if the app enforces a format.'
+-  - 'Outcomes: discovery only observed the happy path. Add the business outcomes and error states this flow can
+-    hit (not found, validation, restricted) before approving.'
++  - Verified the recorded path is read-only and parameters/outputs are generalized.
++  - Tightened member_id to five digits using the mock's validation rule.
++  - Added observed not-found and restricted-account business outcomes.
++  - Removed positional CSS fallbacks; unresolved semantic/vendor targets must fail closed.
++  - Approval covers this synthetic demo; no production tenant authorization is implied.
+ provenance:
+   method: llm_discovery
+   recorded_at: '2026-11-08T05:32:17.910+00:00'

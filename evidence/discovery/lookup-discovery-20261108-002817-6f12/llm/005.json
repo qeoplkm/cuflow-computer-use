@@ -1,0 +1,19 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "GOAL: [omitted: see reviewed goal_template]\n\nPARAMETERS declared: member_id='‹pii›'\nPREVIOUS ACTIONS:\n1. click Member Inquiry link — ok; navigated {'work': 'work/inquiry'}\n2. type_text Member Number text box = '‹pii›' — ok; screen updated in place\n3. click Search button — ok; screen updated in place\n4. click Select link — ok; navigated {'work': 'work/member?m=‹pii›&t=‹token›'}\n\nCURRENT SCREEN:\n## frame \"top\" /main\n(frameset: banner, nav, work)\n## frame \"banner\" /banner\n[banner:1] Harbor Example Credit Union | [banner:2] OPR: TELLER01 BR: 001 MockCore 4.2.1\n## frame \"nav\" /nav\n[nav:1] FUNCTIONS\n[nav:2] link \"Member Inquiry\"\n[nav:3] link \"New Sub-Account\"\n[nav:4] link \"Transfers\"\n[nav:5] link \"Reports\"\n[nav:6] link \"Sign Off\"\n## frame \"work\" /work/member?m=‹pii›&t=‹token›\nMEMBER DETAIL\n────\n[work:1] Member No: | [work:2] ‹pii›\n[work:3] Name: | [work:4] ‹pii›\n[work:5] Tax ID: | [work:6] ‹pii›\n[work:7] Address: | [work:8] ‹pii›\n[work:9] Phone: | [work:10] ‹pii›\n[work:11] Member Since: | [work:12] ‹pii›\nSHARE / LOAN ACCOUNTS\n[work:13] Sfx | [work:14] Type | [work:15] Description | [work:16] Balance | [work:17] Available\n[work:18] 0000 | [work:19] SHR | [work:20] Share Savings | [work:21] ‹money› | [work:22] ‹money›\n[work:23] 0010 | [work:24] DFT | [work:25] Checking | [work:26] ‹money› | [work:27] ‹money›\n[work:28] 0070 | [work:29] LN | [work:30] Auto Loan | [work:31] ‹money› | [work:32] ‹money›\n[work:33] button \"Open Sub-Account\" [work:34] button \"New Inquiry\"",
+  "tool": "extract",
+  "args": {
+    "description": "Share Savings balance",
+    "row_key": "Share Savings",
+    "intent": "Read the Share Savings balance for member ‹pii›",
+    "sensitivity": "financial",
+    "output_name": "savings_balance",
+    "output_type": "money",
+    "ref": "work:21"
+  },
+  "usage": {
+    "input_tokens": 3348,
+    "output_tokens": 76
+  },
+  "screenshot": "screens/005-step05.png"
+}

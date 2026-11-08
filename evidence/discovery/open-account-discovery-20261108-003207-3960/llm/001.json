@@ -1,0 +1,15 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "GOAL: [omitted: see reviewed goal_template]\n\nPREVIOUS ACTIONS: none yet\n\nCURRENT SCREEN:\n## frame \"top\" /main\n(frameset: banner, nav, work)\n## frame \"banner\" /banner\n[banner:1] Harbor Example Credit Union | [banner:2] OPR: TELLER01 BR: 001 MockCore 4.2.1\n## frame \"nav\" /nav\n[nav:1] FUNCTIONS\n[nav:2] link \"Member Inquiry\"\n[nav:3] link \"New Sub-Account\"\n[nav:4] link \"Transfers\"\n[nav:5] link \"Reports\"\n[nav:6] link \"Sign Off\"\n## frame \"work\" /work/home\nTELLER WORKSTATION\n────\nWelcome, TELLER01. Branch 001 - MAIN.\nSelect a function from the menu at left.\n[work:1] BULLETIN Holiday Club enrollment is open through 11/30.",
+  "tool": "click",
+  "args": {
+    "intent": "Navigate to Member Inquiry to look up member ‹goal_value›",
+    "ref": "nav:2",
+    "risk": "safe"
+  },
+  "usage": {
+    "input_tokens": 2914,
+    "output_tokens": 41
+  },
+  "screenshot": "screens/001-step01.png"
+}

@@ -1,0 +1,17 @@
+{
+  "run_id": "discovery-20261108-002817-6f12",
+  "mode": "discovery",
+  "capability": "mockcore.member.get_savings_balance",
+  "capability_version": "1.0.0",
+  "tenant": "harbor",
+  "status": "succeeded",
+  "outputs": {
+    "savings_balance": "\u2039savings_balance\u203a"
+  },
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 18297,
+  "evidence_dir": "evidence/discovery/lookup-discovery-20261108-002817-6f12"
+}

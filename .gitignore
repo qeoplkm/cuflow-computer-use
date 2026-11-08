@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.DS_Store
+*.pem
+*.key
+dist/
+runs/
+.pytest_cache/
+*.egg-info/
+build/
+
+# the assignment brief is the company's document, not part of the submission
+Assignment*.pdf

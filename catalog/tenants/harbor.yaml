@@ -1,0 +1,24 @@
+# Tenant: Harbor Example Credit Union — runs MockCore Teller 4.2.1 (base tenant; capabilities
+# were discovered here).
+schema_version: cuflow.tenant/v1
+tenant: harbor
+display_name: Harbor Example Credit Union
+product: mockcore
+product_version: 4.2.1
+base_url: http://127.0.0.1:8765
+
+# Logical name -> reference. Values live in the environment / a vault, never in the repo,
+# never in artifacts, never in front of the model.
+secrets:
+  operator_username: env:CUFLOW_SECRET_HARBOR_OPERATOR_USERNAME
+  operator_password: env:CUFLOW_SECRET_HARBOR_OPERATOR_PASSWORD
+
+policy:
+  allowed_origins: [http://127.0.0.1:8765]
+  allowed_paths: [/, /login, /main, /banner, /nav, /work/*]
+  denied_paths: [/__admin*, /logout]
+  allowed_actions: [click, fill, select, press, navigate, extract]
+  irreversible_keywords: [submit, confirm, post, transfer, delete, close account, approve, send, authorize, disburse]
+  on_irreversible: require_approval
+  max_steps: 25
+  max_seconds: 300

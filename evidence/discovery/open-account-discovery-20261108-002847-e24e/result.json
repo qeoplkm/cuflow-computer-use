@@ -1,0 +1,18 @@
+{
+  "run_id": "discovery-20261108-002847-e24e",
+  "mode": "discovery",
+  "tenant": "harbor",
+  "status": "failed",
+  "outputs": {},
+  "error": {
+    "code": "STEP_BUDGET_EXCEEDED",
+    "message": "goal not reached within 25 steps",
+    "retryable": false
+  },
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 58122,
+  "evidence_dir": "evidence/discovery/open-account-discovery-20261108-002847-e24e"
+}

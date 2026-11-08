@@ -1,0 +1,173 @@
+{
+  "$defs": {
+    "CapabilityOverride": {
+      "additionalProperties": false,
+      "properties": {
+        "applies_to": {
+          "description": "capability version range this patch was written for, e.g. '1.x'",
+          "title": "Applies To",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "targets": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "description": "target name -> JSON merge patch",
+          "title": "Targets",
+          "type": "object"
+        },
+        "steps": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "description": "step id -> JSON merge patch",
+          "title": "Steps",
+          "type": "object"
+        }
+      },
+      "required": [
+        "applies_to",
+        "reason"
+      ],
+      "title": "CapabilityOverride",
+      "type": "object"
+    },
+    "Policy": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_origins": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Origins",
+          "type": "array"
+        },
+        "allowed_paths": {
+          "description": "globs over the URL path",
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Paths",
+          "type": "array"
+        },
+        "denied_paths": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Denied Paths",
+          "type": "array"
+        },
+        "allowed_actions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Actions",
+          "type": "array"
+        },
+        "irreversible_keywords": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Irreversible Keywords",
+          "type": "array"
+        },
+        "reversible_keywords": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reversible Keywords",
+          "type": "array"
+        },
+        "on_irreversible": {
+          "default": "require_approval",
+          "enum": [
+            "block",
+            "require_approval"
+          ],
+          "title": "On Irreversible",
+          "type": "string"
+        },
+        "max_steps": {
+          "default": 25,
+          "title": "Max Steps",
+          "type": "integer"
+        },
+        "max_seconds": {
+          "default": 300,
+          "title": "Max Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "allowed_origins",
+        "allowed_paths"
+      ],
+      "title": "Policy",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "cuflow.tenant/v1",
+      "default": "cuflow.tenant/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "tenant": {
+      "title": "Tenant",
+      "type": "string"
+    },
+    "display_name": {
+      "title": "Display Name",
+      "type": "string"
+    },
+    "product": {
+      "title": "Product",
+      "type": "string"
+    },
+    "product_version": {
+      "title": "Product Version",
+      "type": "string"
+    },
+    "base_url": {
+      "title": "Base Url",
+      "type": "string"
+    },
+    "secrets": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "logical name -> secret reference (never a value)",
+      "title": "Secrets",
+      "type": "object"
+    },
+    "policy": {
+      "$ref": "#/$defs/Policy"
+    },
+    "overrides": {
+      "additionalProperties": {
+        "$ref": "#/$defs/CapabilityOverride"
+      },
+      "title": "Overrides",
+      "type": "object"
+    }
+  },
+  "required": [
+    "tenant",
+    "display_name",
+    "product",
+    "product_version",
+    "base_url",
+    "secrets",
+    "policy"
+  ],
+  "title": "TenantConfig",
+  "type": "object"
+}

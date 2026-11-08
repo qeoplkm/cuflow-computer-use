@@ -1,0 +1,1640 @@
+{
+  "$defs": {
+    "AllCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "all",
+          "default": "all",
+          "title": "Kind",
+          "type": "string"
+        },
+        "of": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCondition",
+                "any": "#/$defs/AnyCondition",
+                "dialog": "#/$defs/DialogCondition",
+                "element": "#/$defs/ElementCondition",
+                "location": "#/$defs/LocationCondition",
+                "not": "#/$defs/NotCondition",
+                "text": "#/$defs/TextCondition"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/TextCondition"
+              },
+              {
+                "$ref": "#/$defs/ElementCondition"
+              },
+              {
+                "$ref": "#/$defs/LocationCondition"
+              },
+              {
+                "$ref": "#/$defs/DialogCondition"
+              },
+              {
+                "$ref": "#/$defs/AllCondition"
+              },
+              {
+                "$ref": "#/$defs/AnyCondition"
+              },
+              {
+                "$ref": "#/$defs/NotCondition"
+              }
+            ]
+          },
+          "title": "Of",
+          "type": "array"
+        }
+      },
+      "required": [
+        "of"
+      ],
+      "title": "AllCondition",
+      "type": "object"
+    },
+    "AnyCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "any",
+          "default": "any",
+          "title": "Kind",
+          "type": "string"
+        },
+        "of": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCondition",
+                "any": "#/$defs/AnyCondition",
+                "dialog": "#/$defs/DialogCondition",
+                "element": "#/$defs/ElementCondition",
+                "location": "#/$defs/LocationCondition",
+                "not": "#/$defs/NotCondition",
+                "text": "#/$defs/TextCondition"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/TextCondition"
+              },
+              {
+                "$ref": "#/$defs/ElementCondition"
+              },
+              {
+                "$ref": "#/$defs/LocationCondition"
+              },
+              {
+                "$ref": "#/$defs/DialogCondition"
+              },
+              {
+                "$ref": "#/$defs/AllCondition"
+              },
+              {
+                "$ref": "#/$defs/AnyCondition"
+              },
+              {
+                "$ref": "#/$defs/NotCondition"
+              }
+            ]
+          },
+          "title": "Of",
+          "type": "array"
+        }
+      },
+      "required": [
+        "of"
+      ],
+      "title": "AnyCondition",
+      "type": "object"
+    },
+    "AppRef": {
+      "additionalProperties": false,
+      "properties": {
+        "product": {
+          "title": "Product",
+          "type": "string"
+        },
+        "versions": {
+          "description": "compatible product versions, e.g. '>=4.2,<5'",
+          "title": "Versions",
+          "type": "string"
+        },
+        "surface": {
+          "default": "web",
+          "enum": [
+            "web",
+            "desktop",
+            "terminal"
+          ],
+          "title": "Surface",
+          "type": "string"
+        }
+      },
+      "required": [
+        "product",
+        "versions"
+      ],
+      "title": "AppRef",
+      "type": "object"
+    },
+    "AttrLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "const": "attr",
+          "default": "attr",
+          "title": "By",
+          "type": "string"
+        },
+        "tag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tag"
+        },
+        "attrs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "exact match; 'href' is a glob",
+          "title": "Attrs",
+          "type": "object"
+        },
+        "nth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nth"
+        }
+      },
+      "required": [
+        "attrs"
+      ],
+      "title": "AttrLocator",
+      "type": "object"
+    },
+    "BBox": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "title": "Y",
+          "type": "integer"
+        },
+        "w": {
+          "title": "W",
+          "type": "integer"
+        },
+        "h": {
+          "title": "H",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "ClickAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "click",
+          "default": "click",
+          "title": "Type",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            }
+          ],
+          "title": "Target"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "title": "ClickAction",
+      "type": "object"
+    },
+    "CssLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "const": "css",
+          "default": "css",
+          "title": "By",
+          "type": "string"
+        },
+        "css": {
+          "title": "Css",
+          "type": "string"
+        },
+        "nth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nth"
+        }
+      },
+      "required": [
+        "css"
+      ],
+      "title": "CssLocator",
+      "type": "object"
+    },
+    "DialogCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "dialog",
+          "default": "dialog",
+          "title": "Kind",
+          "type": "string"
+        },
+        "pattern": {
+          "title": "Pattern",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pattern"
+      ],
+      "title": "DialogCondition",
+      "type": "object"
+    },
+    "ElementCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "element",
+          "default": "element",
+          "title": "Kind",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            }
+          ],
+          "title": "Target"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "title": "ElementCondition",
+      "type": "object"
+    },
+    "ExtractAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "extract",
+          "default": "extract",
+          "title": "Type",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            }
+          ],
+          "title": "Target"
+        },
+        "output": {
+          "title": "Output",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "output"
+      ],
+      "title": "ExtractAction",
+      "type": "object"
+    },
+    "FillAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "fill",
+          "default": "fill",
+          "title": "Type",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            }
+          ],
+          "title": "Target"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ParamRef"
+            },
+            {
+              "$ref": "#/$defs/SecretRef"
+            },
+            {
+              "$ref": "#/$defs/LiteralValue"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "target",
+        "value"
+      ],
+      "title": "FillAction",
+      "type": "object"
+    },
+    "LiteralValue": {
+      "additionalProperties": false,
+      "properties": {
+        "literal": {
+          "title": "Literal",
+          "type": "string"
+        }
+      },
+      "required": [
+        "literal"
+      ],
+      "title": "LiteralValue",
+      "type": "object"
+    },
+    "LocationCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "location",
+          "default": "location",
+          "title": "Kind",
+          "type": "string"
+        },
+        "pattern": {
+          "description": "glob over path?query, {param} placeholders allowed",
+          "title": "Pattern",
+          "type": "string"
+        },
+        "frame": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame"
+        },
+        "ignore_query": {
+          "description": "explicit transient query keys ignored in both expected and observed locations",
+          "items": {
+            "type": "string"
+          },
+          "title": "Ignore Query",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pattern"
+      ],
+      "title": "LocationCondition",
+      "type": "object"
+    },
+    "NavigateAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "navigate",
+          "default": "navigate",
+          "title": "Type",
+          "type": "string"
+        },
+        "url": {
+          "description": "path relative to the tenant base_url; {param} placeholders allowed",
+          "title": "Url",
+          "type": "string"
+        },
+        "frame": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "NavigateAction",
+      "type": "object"
+    },
+    "NotCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "not",
+          "default": "not",
+          "title": "Kind",
+          "type": "string"
+        },
+        "cond": {
+          "discriminator": {
+            "mapping": {
+              "all": "#/$defs/AllCondition",
+              "any": "#/$defs/AnyCondition",
+              "dialog": "#/$defs/DialogCondition",
+              "element": "#/$defs/ElementCondition",
+              "location": "#/$defs/LocationCondition",
+              "not": "#/$defs/NotCondition",
+              "text": "#/$defs/TextCondition"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/TextCondition"
+            },
+            {
+              "$ref": "#/$defs/ElementCondition"
+            },
+            {
+              "$ref": "#/$defs/LocationCondition"
+            },
+            {
+              "$ref": "#/$defs/DialogCondition"
+            },
+            {
+              "$ref": "#/$defs/AllCondition"
+            },
+            {
+              "$ref": "#/$defs/AnyCondition"
+            },
+            {
+              "$ref": "#/$defs/NotCondition"
+            }
+          ],
+          "title": "Cond"
+        }
+      },
+      "required": [
+        "cond"
+      ],
+      "title": "NotCondition",
+      "type": "object"
+    },
+    "Outcome": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/OutcomeKind"
+        },
+        "when": {
+          "discriminator": {
+            "mapping": {
+              "all": "#/$defs/AllCondition",
+              "any": "#/$defs/AnyCondition",
+              "dialog": "#/$defs/DialogCondition",
+              "element": "#/$defs/ElementCondition",
+              "location": "#/$defs/LocationCondition",
+              "not": "#/$defs/NotCondition",
+              "text": "#/$defs/TextCondition"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/TextCondition"
+            },
+            {
+              "$ref": "#/$defs/ElementCondition"
+            },
+            {
+              "$ref": "#/$defs/LocationCondition"
+            },
+            {
+              "$ref": "#/$defs/DialogCondition"
+            },
+            {
+              "$ref": "#/$defs/AllCondition"
+            },
+            {
+              "$ref": "#/$defs/AnyCondition"
+            },
+            {
+              "$ref": "#/$defs/NotCondition"
+            }
+          ],
+          "title": "When"
+        },
+        "code": {
+          "description": "stable machine-readable code returned to the caller",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "steps": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "step ids where this can occur; null = anywhere",
+          "title": "Steps"
+        },
+        "recovery": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Recovery"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "retryable": {
+          "default": false,
+          "description": "failure only: may the caller retry later",
+          "title": "Retryable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "when",
+        "code",
+        "message"
+      ],
+      "title": "Outcome",
+      "type": "object"
+    },
+    "OutcomeKind": {
+      "enum": [
+        "business",
+        "recoverable",
+        "failure"
+      ],
+      "title": "OutcomeKind",
+      "type": "string"
+    },
+    "OutputSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "default": "string",
+          "enum": [
+            "string",
+            "money",
+            "decimal",
+            "integer",
+            "date"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": "internal"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "OutputSpec",
+      "type": "object"
+    },
+    "ParamRef": {
+      "additionalProperties": false,
+      "properties": {
+        "param": {
+          "title": "Param",
+          "type": "string"
+        }
+      },
+      "required": [
+        "param"
+      ],
+      "title": "ParamRef",
+      "type": "object"
+    },
+    "ParamSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "default": "string",
+          "enum": [
+            "string",
+            "integer",
+            "decimal",
+            "boolean"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "pattern": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pattern"
+        },
+        "enum": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Enum"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": "internal"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "ParamSpec",
+      "type": "object"
+    },
+    "PressAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "press",
+          "default": "press",
+          "title": "Type",
+          "type": "string"
+        },
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        }
+      },
+      "required": [
+        "key"
+      ],
+      "title": "PressAction",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "enum": [
+            "llm_discovery",
+            "human_demonstration",
+            "authored"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "recorded_at": {
+          "title": "Recorded At",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Run Id"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "tenant": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tenant"
+        },
+        "app_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "App Version"
+        },
+        "goal_template": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "the goal with concrete inputs replaced by {params}",
+          "title": "Goal Template"
+        }
+      },
+      "required": [
+        "method",
+        "recorded_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Recovery": {
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {
+          "enum": [
+            "run_steps",
+            "restart",
+            "relogin_restart",
+            "escalate"
+          ],
+          "title": "Strategy",
+          "type": "string"
+        },
+        "steps": {
+          "description": "for run_steps (e.g. click 'Acknowledge')",
+          "items": {
+            "$ref": "#/$defs/Step"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "max_attempts": {
+          "default": 2,
+          "title": "Max Attempts",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "strategy"
+      ],
+      "title": "Recovery",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "approved",
+            "deprecated"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reviewed_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed By"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        }
+      },
+      "title": "Review",
+      "type": "object"
+    },
+    "Risk": {
+      "enum": [
+        "safe",
+        "reversible",
+        "irreversible"
+      ],
+      "title": "Risk",
+      "type": "string"
+    },
+    "RoleLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "const": "role",
+          "default": "role",
+          "title": "By",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "name": {
+          "description": "accessible or inferred name; may contain {param} placeholders",
+          "title": "Name",
+          "type": "string"
+        },
+        "match": {
+          "default": "exact",
+          "enum": [
+            "exact",
+            "contains",
+            "regex"
+          ],
+          "title": "Match",
+          "type": "string"
+        },
+        "row_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "only elements whose table row contains this text",
+          "title": "Row Text"
+        },
+        "nth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nth"
+        }
+      },
+      "required": [
+        "role",
+        "name"
+      ],
+      "title": "RoleLocator",
+      "type": "object"
+    },
+    "RowKey": {
+      "additionalProperties": false,
+      "properties": {
+        "column": {
+          "title": "Column",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "match": {
+          "default": "exact",
+          "enum": [
+            "exact",
+            "contains"
+          ],
+          "title": "Match",
+          "type": "string"
+        }
+      },
+      "required": [
+        "column",
+        "value"
+      ],
+      "title": "RowKey",
+      "type": "object"
+    },
+    "SecretRef": {
+      "additionalProperties": false,
+      "properties": {
+        "secret": {
+          "description": "logical secret name, resolved through the tenant's secret store",
+          "title": "Secret",
+          "type": "string"
+        }
+      },
+      "required": [
+        "secret"
+      ],
+      "title": "SecretRef",
+      "type": "object"
+    },
+    "SelectAction": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "select",
+          "default": "select",
+          "title": "Type",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Target"
+            },
+            {
+              "$ref": "#/$defs/TargetRef"
+            }
+          ],
+          "title": "Target"
+        },
+        "option": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ParamRef"
+            },
+            {
+              "$ref": "#/$defs/SecretRef"
+            },
+            {
+              "$ref": "#/$defs/LiteralValue"
+            }
+          ],
+          "title": "Option"
+        }
+      },
+      "required": [
+        "target",
+        "option"
+      ],
+      "title": "SelectAction",
+      "type": "object"
+    },
+    "Sensitivity": {
+      "enum": [
+        "public",
+        "internal",
+        "pii",
+        "financial",
+        "secret"
+      ],
+      "title": "Sensitivity",
+      "type": "string"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "stable id; logs, drift reports and tenant overrides key off it",
+          "title": "Id",
+          "type": "string"
+        },
+        "intent": {
+          "description": "why this step exists, for reviewers",
+          "title": "Intent",
+          "type": "string"
+        },
+        "action": {
+          "discriminator": {
+            "mapping": {
+              "click": "#/$defs/ClickAction",
+              "extract": "#/$defs/ExtractAction",
+              "fill": "#/$defs/FillAction",
+              "navigate": "#/$defs/NavigateAction",
+              "press": "#/$defs/PressAction",
+              "select": "#/$defs/SelectAction"
+            },
+            "propertyName": "type"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ClickAction"
+            },
+            {
+              "$ref": "#/$defs/FillAction"
+            },
+            {
+              "$ref": "#/$defs/SelectAction"
+            },
+            {
+              "$ref": "#/$defs/PressAction"
+            },
+            {
+              "$ref": "#/$defs/NavigateAction"
+            },
+            {
+              "$ref": "#/$defs/ExtractAction"
+            }
+          ],
+          "title": "Action"
+        },
+        "risk": {
+          "$ref": "#/$defs/Risk",
+          "default": "safe"
+        },
+        "idempotent": {
+          "default": true,
+          "description": "safe to repeat if the flow must restart",
+          "title": "Idempotent",
+          "type": "boolean"
+        },
+        "expect": {
+          "anyOf": [
+            {
+              "discriminator": {
+                "mapping": {
+                  "all": "#/$defs/AllCondition",
+                  "any": "#/$defs/AnyCondition",
+                  "dialog": "#/$defs/DialogCondition",
+                  "element": "#/$defs/ElementCondition",
+                  "location": "#/$defs/LocationCondition",
+                  "not": "#/$defs/NotCondition",
+                  "text": "#/$defs/TextCondition"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/TextCondition"
+                },
+                {
+                  "$ref": "#/$defs/ElementCondition"
+                },
+                {
+                  "$ref": "#/$defs/LocationCondition"
+                },
+                {
+                  "$ref": "#/$defs/DialogCondition"
+                },
+                {
+                  "$ref": "#/$defs/AllCondition"
+                },
+                {
+                  "$ref": "#/$defs/AnyCondition"
+                },
+                {
+                  "$ref": "#/$defs/NotCondition"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "postcondition to wait for (we never sleep)",
+          "title": "Expect"
+        },
+        "timeout_ms": {
+          "default": 15000,
+          "title": "Timeout Ms",
+          "type": "integer"
+        },
+        "actor": {
+          "default": "agent",
+          "description": "who performed it when recorded",
+          "enum": [
+            "agent",
+            "human",
+            "author"
+          ],
+          "title": "Actor",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "intent",
+        "action"
+      ],
+      "title": "Step",
+      "type": "object"
+    },
+    "TableCellLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "const": "table_cell",
+          "default": "table_cell",
+          "title": "By",
+          "type": "string"
+        },
+        "column": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "header text of the column (header = first row)",
+          "title": "Column"
+        },
+        "row_key": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RowKey"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "select the row whose <column> cell equals <value>"
+        },
+        "row_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "key/value layout: the row whose first cell is this label",
+          "title": "Row Label"
+        },
+        "offset": {
+          "default": 1,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "nth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nth"
+        }
+      },
+      "title": "TableCellLocator",
+      "type": "object"
+    },
+    "Target": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "description": "human-readable, e.g. 'Member Number text box'",
+          "title": "Description",
+          "type": "string"
+        },
+        "frame": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "surface scope: frame name (web) / window (desktop)",
+          "title": "Frame"
+        },
+        "locators": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "attr": "#/$defs/AttrLocator",
+                "css": "#/$defs/CssLocator",
+                "role": "#/$defs/RoleLocator",
+                "table_cell": "#/$defs/TableCellLocator",
+                "text": "#/$defs/TextLocator"
+              },
+              "propertyName": "by"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/RoleLocator"
+              },
+              {
+                "$ref": "#/$defs/TableCellLocator"
+              },
+              {
+                "$ref": "#/$defs/AttrLocator"
+              },
+              {
+                "$ref": "#/$defs/TextLocator"
+              },
+              {
+                "$ref": "#/$defs/CssLocator"
+              }
+            ]
+          },
+          "minItems": 1,
+          "title": "Locators",
+          "type": "array"
+        },
+        "bbox_hint": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BBox"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "where it was at record time; diagnostics only"
+        }
+      },
+      "required": [
+        "description",
+        "locators"
+      ],
+      "title": "Target",
+      "type": "object"
+    },
+    "TargetRef": {
+      "additionalProperties": false,
+      "description": "Reference into Capability.targets. Each control is defined once (like a page object),\nso a reviewer reads it once and a tenant override patches it once.",
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TargetRef",
+      "type": "object"
+    },
+    "TextCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "text",
+          "default": "text",
+          "title": "Kind",
+          "type": "string"
+        },
+        "pattern": {
+          "title": "Pattern",
+          "type": "string"
+        },
+        "regex": {
+          "default": false,
+          "title": "Regex",
+          "type": "boolean"
+        },
+        "frame": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame"
+        }
+      },
+      "required": [
+        "pattern"
+      ],
+      "title": "TextCondition",
+      "type": "object"
+    },
+    "TextLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "const": "text",
+          "default": "text",
+          "title": "By",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "match": {
+          "default": "exact",
+          "enum": [
+            "exact",
+            "contains",
+            "regex"
+          ],
+          "title": "Match",
+          "type": "string"
+        },
+        "nth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nth"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "TextLocator",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "cuflow.capability/v1",
+      "default": "cuflow.capability/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "id": {
+      "description": "<product>.<domain>.<verb_noun>, e.g. mockcore.member.get_savings_balance",
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "description": "semver of this capability",
+      "title": "Version",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "description": "what it does, for a calling agent",
+      "title": "Description",
+      "type": "string"
+    },
+    "app": {
+      "$ref": "#/$defs/AppRef"
+    },
+    "requires_session": {
+      "default": true,
+      "description": "run the app profile's login before step 1",
+      "title": "Requires Session",
+      "type": "boolean"
+    },
+    "inputs": {
+      "items": {
+        "$ref": "#/$defs/ParamSpec"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/OutputSpec"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "side_effects": {
+      "$ref": "#/$defs/Risk",
+      "default": "safe"
+    },
+    "targets": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Target"
+      },
+      "description": "named controls, referenced as {ref: name}",
+      "title": "Targets",
+      "type": "object"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/Step"
+      },
+      "title": "Steps",
+      "type": "array"
+    },
+    "success": {
+      "description": "checkpoint asserted after the last step",
+      "discriminator": {
+        "mapping": {
+          "all": "#/$defs/AllCondition",
+          "any": "#/$defs/AnyCondition",
+          "dialog": "#/$defs/DialogCondition",
+          "element": "#/$defs/ElementCondition",
+          "location": "#/$defs/LocationCondition",
+          "not": "#/$defs/NotCondition",
+          "text": "#/$defs/TextCondition"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/TextCondition"
+        },
+        {
+          "$ref": "#/$defs/ElementCondition"
+        },
+        {
+          "$ref": "#/$defs/LocationCondition"
+        },
+        {
+          "$ref": "#/$defs/DialogCondition"
+        },
+        {
+          "$ref": "#/$defs/AllCondition"
+        },
+        {
+          "$ref": "#/$defs/AnyCondition"
+        },
+        {
+          "$ref": "#/$defs/NotCondition"
+        }
+      ],
+      "title": "Success"
+    },
+    "outcomes": {
+      "description": "task-specific; profile outcomes also apply",
+      "items": {
+        "$ref": "#/$defs/Outcome"
+      },
+      "title": "Outcomes",
+      "type": "array"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "title",
+    "description",
+    "app",
+    "steps",
+    "success",
+    "provenance"
+  ],
+  "title": "Capability",
+  "type": "object"
+}

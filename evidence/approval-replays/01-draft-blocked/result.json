@@ -1,0 +1,20 @@
+{
+  "run_id": "replay-20261108-003345-da53",
+  "mode": "replay",
+  "capability": "mockcore.member.open_sub_account",
+  "capability_version": "1.0.0",
+  "tenant": "harbor",
+  "status": "blocked",
+  "outputs": {},
+  "error": {
+    "code": "NOT_APPROVED",
+    "message": "capability is 'draft'; unattended replay requires 'approved'",
+    "retryable": false
+  },
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [],
+  "duration_ms": 0,
+  "evidence_dir": "evidence/approval-replays/01-draft-blocked"
+}

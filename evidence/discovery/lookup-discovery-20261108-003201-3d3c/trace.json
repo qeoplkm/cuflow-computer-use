@@ -1,0 +1,267 @@
+[
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Open Member Inquiry to look up member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/home"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "fill",
+    "intent": "Enter member number to search",
+    "frame": "work",
+    "target": {
+      "description": "Member Number text box",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "textbox",
+          "name": "Member Number",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "fld_mbr_no"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > input"
+        }
+      ],
+      "bbox_hint": {
+        "x": 142,
+        "y": 42,
+        "w": 69,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": {
+      "param": "member_id"
+    },
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Search for member ‹pii›",
+    "frame": "work",
+    "target": {
+      "description": "Search button",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "button",
+          "name": "Search",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "input",
+          "attrs": {
+            "name": "btn_srch"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input:nth-of-type(1)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 142,
+        "y": 96,
+        "w": 58,
+        "h": 21
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Select member from search results",
+    "frame": "work",
+    "target": {
+      "description": "Select link",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Select",
+          "match": "exact",
+          "row_text": "{member_id}"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/member?m={member_id}&t=‹token›"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td:nth-of-type(4) > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 304,
+        "y": 165,
+        "w": 44,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/member?m=‹pii›&t=‹token›"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "extract",
+    "intent": "read the Share Savings account balance for member ‹pii›",
+    "frame": "work",
+    "target": {
+      "description": "\"Balance\" cell of the row where Description = \"Share Savings\"",
+      "frame": "work",
+      "locators": [
+        {
+          "by": "table_cell",
+          "column": "Balance",
+          "row_key": {
+            "column": "Description",
+            "value": "Share Savings",
+            "match": "exact"
+          },
+          "offset": 1
+        },
+        {
+          "by": "table_cell",
+          "row_label": "0000",
+          "offset": 3
+        },
+        {
+          "by": "css",
+          "css": "body > font > table:nth-of-type(2) > tbody > tr:nth-of-type(2) > td:nth-of-type(4)"
+        }
+      ],
+      "bbox_hint": {
+        "x": 209,
+        "y": 241,
+        "w": 76,
+        "h": 26
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": {
+      "name": "savings_balance",
+      "type": "money",
+      "description": "Current Share Savings balance",
+      "sensitivity": "financial"
+    },
+    "before": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/member?m=‹pii›&t=‹token›"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62949/main",
+      "banner": "http://127.0.0.1:62949/banner",
+      "nav": "http://127.0.0.1:62949/nav",
+      "work": "http://127.0.0.1:62949/work/member?m=‹pii›&t=‹token›"
+    }
+  }
+]

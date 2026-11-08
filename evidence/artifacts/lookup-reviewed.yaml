@@ -1,0 +1,164 @@
+schema_version: cuflow.capability/v1
+id: mockcore.member.get_savings_balance
+version: 1.1.0
+title: Member get savings balance
+description: Look up a credit union member by ID and retrieve their Share Savings balance.
+app: {product: mockcore, versions: '>=4.2,<5', surface: web}
+requires_session: true
+inputs:
+- {name: member_id, type: string, description: Member Number to look up, pattern: '^\d{5}$', sensitivity: pii}
+outputs:
+- {name: savings_balance, type: money, description: Current Share Savings balance, sensitivity: financial}
+side_effects: safe
+targets:
+  member_inquiry_link:
+    description: Member Inquiry link
+    frame: nav
+    locators:
+    - {by: role, role: link, name: Member Inquiry}
+    - by: attr
+      tag: a
+      attrs: {href: /work/inquiry}
+    bbox_hint: {x: 12, y: 38, w: 111, h: 17}
+  member_number_text_box:
+    description: Member Number text box
+    frame: work
+    locators:
+    - {by: role, role: textbox, name: Member Number}
+    - by: attr
+      tag: input
+      attrs: {name: fld_mbr_no}
+    bbox_hint: {x: 142, y: 42, w: 69, h: 21}
+  search_button:
+    description: Search button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Search}
+    - by: attr
+      tag: input
+      attrs: {name: btn_srch}
+    bbox_hint: {x: 142, y: 96, w: 58, h: 21}
+  select_link:
+    description: Select link
+    frame: work
+    locators:
+    - {by: role, role: link, name: Select, row_text: '{member_id}'}
+    - by: attr
+      tag: a
+      attrs: {href: '/work/member?m={member_id}&t=*'}
+    bbox_hint: {x: 304, y: 165, w: 44, h: 17}
+  balance_share_savings:
+    description: '"Balance" cell of the row where Description = "Share Savings"'
+    frame: work
+    locators:
+    - by: table_cell
+      column: Balance
+      row_key: {column: Description, value: Share Savings}
+    - {by: table_cell, row_label: '0000', offset: 3}
+    bbox_hint: {x: 209, y: 241, w: 76, h: 26}
+steps:
+- id: click_member_inquiry
+  intent: Open Member Inquiry to look up member
+  action:
+    type: click
+    target: {ref: member_inquiry_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/inquiry
+      frame: work
+      ignore_query: []
+    - kind: element
+      target: {ref: member_number_text_box}
+  actor: agent
+- id: fill_member_number
+  intent: Enter member number to search
+  action:
+    type: fill
+    target: {ref: member_number_text_box}
+    value: {param: member_id}
+  risk: safe
+  idempotent: true
+  actor: agent
+- id: click_search
+  intent: Search for member {member_id}
+  action:
+    type: click
+    target: {ref: search_button}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: element
+    target: {ref: select_link}
+  actor: agent
+- id: click_select
+  intent: Select member from search results
+  action:
+    type: click
+    target: {ref: select_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - kind: location
+      pattern: /work/member?m={member_id}&t=*
+      frame: work
+      ignore_query:
+      - t
+    - kind: element
+      target: {ref: balance_share_savings}
+  actor: agent
+- id: extract_savings_balance
+  intent: read the Share Savings account balance for member {member_id}
+  action:
+    type: extract
+    target: {ref: balance_share_savings}
+    output: savings_balance
+  risk: safe
+  idempotent: true
+  actor: agent
+success:
+  kind: all
+  of:
+  - {kind: text, pattern: MEMBER DETAIL, frame: work}
+  - kind: location
+    pattern: /work/member?m={member_id}&t=*
+    frame: work
+    ignore_query:
+    - t
+outcomes:
+- id: member_not_found
+  kind: business
+  when: {kind: text, pattern: I2001 NO RECORDS MATCH, frame: work}
+  code: MEMBER_NOT_FOUND
+  message: No member matches the given member number
+  retryable: false
+- id: restricted_account
+  kind: business
+  when: {kind: text, pattern: R17 ACCESS DENIED, frame: work}
+  code: ACCOUNT_RESTRICTED
+  message: The member's account is restricted; a supervisor override is required
+  retryable: false
+review:
+  status: approved
+  reviewed_by: Codex-assisted review
+  reviewed_at: '2026-11-08T05:33:10.008+00:00'
+  notes:
+  - Verified the recorded path is read-only and parameters/outputs are generalized.
+  - Tightened member_id to five digits using the mock's validation rule.
+  - Added observed not-found and restricted-account business outcomes.
+  - Removed positional CSS fallbacks; unresolved semantic/vendor targets must fail closed.
+  - Approval covers this synthetic demo; no production tenant authorization is implied.
+provenance:
+  method: llm_discovery
+  recorded_at: '2026-11-08T05:32:17.910+00:00'
+  run_id: discovery-20261108-003201-3d3c
+  model: gemini-3.5-flash
+  tenant: harbor
+  app_version: 4.2.1
+  goal_template: Look up member {member_id} and read their current Share Savings balance. Use member_id as the input
+    name, savings_balance as the output name, and member.get_savings_balance as the capability name.

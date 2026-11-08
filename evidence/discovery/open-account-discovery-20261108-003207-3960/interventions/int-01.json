@@ -1,0 +1,29 @@
+{
+  "id": "int-01",
+  "run_id": "discovery-20261108-003207-3960",
+  "kind": "needs_approval",
+  "reason": "agent wants to click <Submit> (Submit sub-account opening request)",
+  "subject": "‹email› (tenant harbor)",
+  "step_id": null,
+  "step_intent": null,
+  "locations": {
+    "top": "/main",
+    "banner": "/banner",
+    "nav": "/nav",
+    "work": "/work/subacct"
+  },
+  "alerts": [],
+  "screenshot": "screens/010-intervention-needs_approval.png",
+  "proposed_action": {
+    "action": "click",
+    "target": "Submit",
+    "intent": "Submit sub-account opening request"
+  },
+  "allowed": [
+    "approve",
+    "deny",
+    "completed",
+    "abort"
+  ],
+  "created_at": "2026-11-08T05:32:35.690+00:00"
+}

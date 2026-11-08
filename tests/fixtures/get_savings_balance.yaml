@@ -1,0 +1,107 @@
+# Hand-written fixture used by the replay tests (independent of any LLM run).
+schema_version: cuflow.capability/v1
+id: mockcore.member.get_savings_balance
+version: 0.0.1
+title: Get a member's Share Savings balance
+description: Look up a member by member number and return the current balance of their Share Savings account.
+app: {product: mockcore, versions: '>=4.2,<5', surface: web}
+requires_session: true
+inputs:
+- {name: member_id, type: string, description: 5-digit member number, pattern: '^\d{5}$', sensitivity: pii}
+outputs:
+- {name: savings_balance, type: money, description: Current balance of the Share Savings account, sensitivity: financial}
+side_effects: safe
+steps:
+- id: open_member_inquiry
+  intent: Open the Member Inquiry screen from the navigation menu
+  action:
+    type: click
+    target:
+      description: Member Inquiry menu link
+      frame: nav
+      locators:
+      - {by: role, role: link, name: Member Inquiry}
+      - {by: attr, tag: a, attrs: {href: /work/inquiry}}
+  expect:
+    kind: element
+    target:
+      description: Member Number text box
+      frame: work
+      locators:
+      - {by: role, role: textbox, name: Member Number}
+      - {by: attr, tag: input, attrs: {name: fld_mbr_no}}
+- id: enter_member_number
+  intent: Type the member number into the search form
+  risk: reversible
+  action:
+    type: fill
+    target:
+      description: Member Number text box
+      frame: work
+      locators:
+      - {by: role, role: textbox, name: Member Number}
+      - {by: attr, tag: input, attrs: {name: fld_mbr_no}}
+    value: {param: member_id}
+- id: search
+  intent: Run the search
+  action:
+    type: click
+    target:
+      description: Search button
+      frame: work
+      locators:
+      - {by: role, role: button, name: Search}
+      - {by: attr, tag: input, attrs: {name: btn_srch}}
+  expect:
+    kind: element
+    target:
+      description: Select link in the result row for the member
+      frame: work
+      locators:
+      - {by: role, role: link, name: Select, row_text: '{member_id}'}
+- id: open_member
+  intent: Open the member's detail screen
+  action:
+    type: click
+    target:
+      description: Select link in the result row for the member
+      frame: work
+      locators:
+      - {by: role, role: link, name: Select, row_text: '{member_id}'}
+      - {by: attr, tag: a, attrs: {href: '/work/member?m={member_id}&t=*'}}
+  expect:
+    kind: all
+    of:
+    - {kind: location, frame: work, pattern: '/work/member?m={member_id}*'}
+    - {kind: text, frame: work, pattern: MEMBER DETAIL}
+- id: read_savings_balance
+  intent: Read the Balance of the Share Savings row
+  action:
+    type: extract
+    output: savings_balance
+    target:
+      description: Balance cell of the Share Savings row
+      frame: work
+      locators:
+      - by: table_cell
+        column: Balance
+        row_key: {column: Description, value: Share Savings}
+      - {by: table_cell, row_label: '0000', offset: 3}
+success:
+  kind: all
+  of:
+  - {kind: text, frame: work, pattern: MEMBER DETAIL}
+  - {kind: location, frame: work, pattern: '/work/member?m={member_id}*'}
+outcomes:
+- id: member_not_found
+  kind: business
+  code: MEMBER_NOT_FOUND
+  message: No member matches the given member number
+  when: {kind: text, frame: work, pattern: I2001 NO RECORDS MATCH}
+- id: restricted_account
+  kind: business
+  code: ACCOUNT_RESTRICTED
+  message: The member's account is restricted; a supervisor override is required
+  when: {kind: text, frame: work, pattern: R17 ACCESS DENIED}
+review: {status: approved, reviewed_by: fixture}
+provenance: {method: authored, recorded_at: '2026-11-07T00:00:00Z'}

@@ -1,0 +1,24 @@
+{"capability": "mockcore.member.get_savings_balance", "version": "1.1.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "approved", "seq": 1, "ts": "2026-11-08T05:33:17.537+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:17.537+00:00", "type": "inputs_validated"}
+{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:33:17.537+00:00", "type": "session_login"}
+{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:33:17.545+00:00", "type": "step_started"}
+{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:33:18.032+00:00", "type": "policy_check"}
+{"step": "login_user_id", "ms": 512, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:33:18.058+00:00", "type": "step_ok"}
+{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:33:18.058+00:00", "type": "step_started"}
+{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:33:18.065+00:00", "type": "policy_check"}
+{"step": "login_password", "ms": 31, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:33:18.090+00:00", "type": "step_ok"}
+{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:33:18.090+00:00", "type": "step_started"}
+{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:33:18.096+00:00", "type": "policy_check"}
+{"step": "login_sign_on", "ms": 546, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:33:18.637+00:00", "type": "step_ok"}
+{"seq": 13, "ts": "2026-11-08T05:33:18.651+00:00", "type": "session_established"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 14, "ts": "2026-11-08T05:33:18.651+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:33:18.678+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 542, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:33:19.194+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 17, "ts": "2026-11-08T05:33:19.194+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:33:19.223+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 38, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:33:19.233+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:33:19.233+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:33:19.252+00:00", "type": "policy_check"}
+{"outcome": "member_not_found", "kind": "business", "code": "MEMBER_NOT_FOUND", "step": "click_search", "seq": 22, "ts": "2026-11-08T05:33:19.764+00:00", "type": "outcome_detected"}
+{"outcome": "member_not_found", "code": "MEMBER_NOT_FOUND", "screenshot": "screens/001-outcome-member_not_found.png", "seq": 23, "ts": "2026-11-08T05:33:19.808+00:00", "type": "business_outcome"}
+{"status": "business_outcome", "outputs": {}, "outcome": {"code": "MEMBER_NOT_FOUND", "message": "No member matches the given member number", "outcome_id": "member_not_found", "step_id": "click_search"}, "error": null, "recoveries": 0, "drift": 0, "interventions": 0, "ms": 2270, "seq": 24, "ts": "2026-11-08T05:33:19.841+00:00", "type": "replay_finished"}

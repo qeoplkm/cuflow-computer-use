@@ -1,0 +1,108 @@
+# App profile for the vendor product "MockCore Teller" (all tenants, all capabilities).
+#
+# Hand-authored and reviewed once per product. It holds what is *not* task-specific:
+#   - how to establish a session (credentials only via secret references, never values;
+#     the LLM never sees or types credentials — discovery starts from a signed-on session)
+#   - cross-cutting runtime states every flow can run into, and what to do about them
+schema_version: cuflow.app_profile/v1
+product: mockcore
+versions: '>=4.0,<5'
+surface: web
+
+login:
+- id: login_user_id
+  intent: Enter the service operator's user id
+  actor: author
+  risk: reversible
+  action:
+    type: fill
+    target:
+      description: User ID text box
+      locators:
+      - {by: role, role: textbox, name: User ID}
+      - {by: attr, tag: input, attrs: {name: f01}}
+    value: {secret: operator_username}
+- id: login_password
+  intent: Enter the service operator's password
+  actor: author
+  risk: reversible
+  action:
+    type: fill
+    target:
+      description: Password text box
+      locators:
+      - {by: role, role: textbox, name: Password}
+      - {by: attr, tag: input, attrs: {name: f02}}
+    value: {secret: operator_password}
+- id: login_sign_on
+  intent: Sign on
+  actor: author
+  action:
+    type: click
+    target:
+      description: Sign On button
+      locators:
+      - {by: role, role: button, name: Sign On}
+  expect: {kind: location, frame: top, pattern: /main}
+
+landing:
+  kind: all
+  of:
+  - {kind: location, frame: top, pattern: /main}
+  - kind: element
+    target:
+      description: Sign Off link (navigation frame)
+      frame: nav
+      locators:
+      - {by: role, role: link, name: Sign Off}
+
+outcomes:
+- id: login_rejected
+  kind: failure
+  code: LOGIN_REJECTED
+  message: The application rejected the operator credentials (check the tenant's secret)
+  when: {kind: text, pattern: E101 INVALID USER ID OR PASSWORD}
+
+- id: maintenance_notice
+  kind: recoverable
+  code: MAINTENANCE_NOTICE
+  message: Scheduled-maintenance interstitial shown before the work screen
+  when: {kind: text, frame: work, pattern: SYSTEM NOTICE}
+  recovery:
+    strategy: run_steps
+    max_attempts: 2
+    steps:
+    - id: acknowledge_notice
+      intent: Acknowledge the informational system notice (it redirects to the requested screen)
+      actor: author
+      action:
+        type: click
+        target:
+          description: Acknowledge button on the system notice
+          frame: work
+          locators:
+          - {by: role, role: button, name: Acknowledge}
+      expect:
+        kind: not
+        cond: {kind: text, frame: work, pattern: SYSTEM NOTICE}
+
+- id: session_expired
+  kind: recoverable
+  code: SESSION_EXPIRED
+  message: The application session expired
+  when: {kind: text, pattern: S900 SESSION EXPIRED}
+  recovery: {strategy: relogin_restart, max_attempts: 1}
+
+- id: core_system_error
+  kind: failure
+  code: CORE_SYSTEM_ERROR
+  message: The core system returned a system error page (MCX-500)
+  when: {kind: text, pattern: MCX-500 SYSTEM ERROR}
+  recovery: {strategy: restart, max_attempts: 1}   # one restart for a transient error, then fail
+  retryable: true
+
+- id: function_not_authorized
+  kind: business
+  code: OPERATOR_NOT_AUTHORIZED
+  message: The service operator is not authorized for this function
+  when: {kind: text, pattern: A403 FUNCTION NOT AUTHORIZED}

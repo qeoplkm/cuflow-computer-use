@@ -1,0 +1,32 @@
+[project]
+name = "cuflow"
+version = "0.1.0"
+description = "Computer-use automation: LLM discovery -> typed capability artifacts -> deterministic replay, with HITL handoff and guardrails"
+requires-python = ">=3.11"
+dependencies = [
+  "playwright>=1.50",
+  "pydantic>=2.8",
+  "pyyaml>=6",
+  "google-genai>=1.20",
+  "anthropic>=0.70",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+cuflow = "cuflow.cli:main"
+mockcore = "mockcore.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["cuflow*", "mockcore*"]
+
+[tool.setuptools.package-data]
+cuflow = ["surface/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

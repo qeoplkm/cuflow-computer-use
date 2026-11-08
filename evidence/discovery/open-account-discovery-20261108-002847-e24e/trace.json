@@ -1,0 +1,1186 @@
+[
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account page",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/home"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select member ‹goal_value›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select the member first",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select member ‹goal_value›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account page",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select a member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select the member first",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account page",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select the member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select the member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select member",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to look up member ‹goal_value›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to Member Inquiry to select member ‹goal_value›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account screen",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Go to Member Inquiry to select member ‹goal_value›",
+    "frame": "nav",
+    "target": {
+      "description": "Member Inquiry link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "Member Inquiry",
+          "match": "exact"
+        },
+        {
+          "by": "attr",
+          "tag": "a",
+          "attrs": {
+            "href": "/work/inquiry"
+          }
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(2) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 38,
+        "w": 111,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    }
+  },
+  {
+    "actor": "agent",
+    "action": "click",
+    "intent": "Navigate to New Sub-Account form",
+    "frame": "nav",
+    "target": {
+      "description": "New Sub-Account link",
+      "frame": "nav",
+      "locators": [
+        {
+          "by": "role",
+          "role": "link",
+          "name": "New Sub-Account",
+          "match": "exact"
+        },
+        {
+          "by": "css",
+          "css": "body > font > table > tbody > tr:nth-of-type(3) > td > a"
+        }
+      ],
+      "bbox_hint": {
+        "x": 12,
+        "y": 64,
+        "w": 128,
+        "h": 17
+      }
+    },
+    "risk": "safe",
+    "value": null,
+    "key": null,
+    "output": null,
+    "before": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/inquiry"
+    },
+    "after": {
+      "top": "http://127.0.0.1:62489/main",
+      "banner": "http://127.0.0.1:62489/banner",
+      "nav": "http://127.0.0.1:62489/nav",
+      "work": "http://127.0.0.1:62489/work/subacct"
+    }
+  }
+]

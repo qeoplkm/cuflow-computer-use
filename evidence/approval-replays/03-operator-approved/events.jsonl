@@ -1,0 +1,48 @@
+{"capability": "mockcore.member.open_sub_account", "version": "1.0.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "draft", "seq": 1, "ts": "2026-11-08T05:33:46.484+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›", "account_type": "‹account_type›", "initial_deposit": "‹initial_deposit›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:46.484+00:00", "type": "inputs_validated"}
+{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:33:46.484+00:00", "type": "session_login"}
+{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:33:46.494+00:00", "type": "step_started"}
+{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:33:46.971+00:00", "type": "policy_check"}
+{"step": "login_user_id", "ms": 508, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:33:47.002+00:00", "type": "step_ok"}
+{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:33:47.002+00:00", "type": "step_started"}
+{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:33:47.010+00:00", "type": "policy_check"}
+{"step": "login_password", "ms": 40, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:33:47.043+00:00", "type": "step_ok"}
+{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:33:47.043+00:00", "type": "step_started"}
+{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:33:47.053+00:00", "type": "policy_check"}
+{"step": "login_sign_on", "ms": 542, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:33:47.586+00:00", "type": "step_ok"}
+{"seq": 13, "ts": "2026-11-08T05:33:47.600+00:00", "type": "session_established"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Navigate to Member Inquiry to look up member {member_id}", "seq": 14, "ts": "2026-11-08T05:33:47.600+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:33:47.632+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 574, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:33:48.174+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member ID to search", "seq": 17, "ts": "2026-11-08T05:33:48.174+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:33:48.202+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 38, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:33:48.212+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:33:48.212+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:33:48.232+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 539, "locator": "role(role='button', name='Search')", "seq": 22, "ts": "2026-11-08T05:33:48.751+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member {member_id} from search results", "seq": 23, "ts": "2026-11-08T05:33:48.751+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 24, "ts": "2026-11-08T05:33:48.775+00:00", "type": "policy_check"}
+{"step": "click_select", "ms": 520, "locator": "role(role='link', name='Select', row_text='{member_id}')", "seq": 25, "ts": "2026-11-08T05:33:49.272+00:00", "type": "step_ok"}
+{"step": "click_open_sub_account", "phase": "capability", "action": "click", "intent": "Open the sub-account creation form for this member", "seq": 26, "ts": "2026-11-08T05:33:49.272+00:00", "type": "step_started"}
+{"step": "click_open_sub_account", "allowed": true, "risk": "safe", "reason": null, "seq": 27, "ts": "2026-11-08T05:33:49.296+00:00", "type": "policy_check"}
+{"step": "click_open_sub_account", "ms": 514, "locator": "role(role='button', name='Open Sub-Account')", "seq": 28, "ts": "2026-11-08T05:33:49.786+00:00", "type": "step_ok"}
+{"step": "select_account_type", "phase": "capability", "action": "select", "intent": "Select {account_type} as the account type", "seq": 29, "ts": "2026-11-08T05:33:49.786+00:00", "type": "step_started"}
+{"step": "select_account_type", "allowed": true, "risk": "safe", "reason": null, "seq": 30, "ts": "2026-11-08T05:33:49.809+00:00", "type": "policy_check"}
+{"step": "select_account_type", "ms": 38, "locator": "role(role='combobox', name='Account Type')", "seq": 31, "ts": "2026-11-08T05:33:49.825+00:00", "type": "step_ok"}
+{"step": "fill_initial_deposit", "phase": "capability", "action": "fill", "intent": "Enter initial deposit amount", "seq": 32, "ts": "2026-11-08T05:33:49.825+00:00", "type": "step_started"}
+{"step": "fill_initial_deposit", "allowed": true, "risk": "safe", "reason": null, "seq": 33, "ts": "2026-11-08T05:33:49.840+00:00", "type": "policy_check"}
+{"step": "fill_initial_deposit", "ms": 17, "locator": "role(role='textbox', name='Initial Deposit')", "seq": 34, "ts": "2026-11-08T05:33:49.842+00:00", "type": "step_ok"}
+{"step": "click_continue", "phase": "capability", "action": "click", "intent": "Proceed to next step for sub-account opening", "seq": 35, "ts": "2026-11-08T05:33:49.842+00:00", "type": "step_started"}
+{"step": "click_continue", "allowed": true, "risk": "safe", "reason": null, "seq": 36, "ts": "2026-11-08T05:33:49.858+00:00", "type": "policy_check"}
+{"step": "click_continue", "ms": 537, "locator": "role(role='button', name='Continue')", "seq": 37, "ts": "2026-11-08T05:33:50.379+00:00", "type": "step_ok"}
+{"step": "click_submit", "phase": "capability", "action": "click", "intent": "Submit sub-account opening request", "seq": 38, "ts": "2026-11-08T05:33:50.379+00:00", "type": "step_started"}
+{"step": "click_submit", "allowed": false, "risk": "irreversible", "reason": "irreversible action requires approval", "seq": 39, "ts": "2026-11-08T05:33:50.402+00:00", "type": "policy_check"}
+{"id": "int-01", "kind": "needs_approval", "reason": "step 'click_submit' is irreversible and needs approval: Submit sub-account opening request", "step": "click_submit", "seq": 40, "ts": "2026-11-08T05:33:50.437+00:00", "type": "intervention_requested"}
+{"frm": "automation", "to": "awaiting_human", "holder": "nobody", "intervention": "int-01", "seq": 41, "ts": "2026-11-08T05:33:50.437+00:00", "type": "control_transfer"}
+{"frm": "awaiting_human", "to": "human", "holder": "simulated:demo-supervisor", "intervention": "int-01", "seq": 42, "ts": "2026-11-08T05:33:50.739+00:00", "type": "control_transfer"}
+{"frm": "human", "to": "automation", "holder": "automation", "intervention": "int-01", "decision": "approve", "by": "simulated:demo-supervisor", "seq": 43, "ts": "2026-11-08T05:33:50.990+00:00", "type": "control_transfer"}
+{"id": "int-01", "decision": "approve", "operator": "simulated:demo-supervisor", "note": "Simulated approval for synthetic local demo data only.", "human_actions": [], "seq": 44, "ts": "2026-11-08T05:33:50.991+00:00", "type": "intervention_resolved"}
+{"step": "click_submit", "allowed": true, "risk": "irreversible", "reason": null, "seq": 45, "ts": "2026-11-08T05:33:50.991+00:00", "type": "policy_check"}
+{"step": "click_submit", "ms": 1111, "locator": "role(role='button', name='Submit')", "seq": 46, "ts": "2026-11-08T05:33:51.491+00:00", "type": "step_ok"}
+{"condition": "all(text 'SUB-ACCOUNT OPENED' in frame work; location work ~ /work/subacct/submit)", "seq": 47, "ts": "2026-11-08T05:33:51.498+00:00", "type": "checkpoint_verified"}
+{"status": "succeeded", "outputs": {}, "outcome": null, "error": null, "recoveries": 0, "drift": 0, "interventions": 1, "ms": 5014, "seq": 48, "ts": "2026-11-08T05:33:51.516+00:00", "type": "replay_finished"}

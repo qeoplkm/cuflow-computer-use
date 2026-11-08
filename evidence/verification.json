@@ -1,0 +1,43 @@
+{
+  "local_deliverables_verified": true,
+  "genuine_lookup_verified": true,
+  "capability": "mockcore.member.get_savings_balance@1.1.0",
+  "replay_scenarios": 15,
+  "approval_replays": 3,
+  "discovery_attempts": [
+    {
+      "directory": "evidence/discovery/lookup-discovery-20261108-002552-a4ef",
+      "status": "failed",
+      "model_calls": 0
+    },
+    {
+      "directory": "evidence/discovery/lookup-discovery-20261108-002817-6f12",
+      "status": "succeeded",
+      "model_calls": 6,
+      "model": "gemini-3.5-flash"
+    },
+    {
+      "directory": "evidence/discovery/lookup-discovery-20261108-003201-3d3c",
+      "status": "succeeded",
+      "model_calls": 6,
+      "model": "gemini-3.5-flash"
+    },
+    {
+      "directory": "evidence/discovery/open-account-discovery-20261108-002847-e24e",
+      "status": "failed",
+      "model_calls": 25
+    },
+    {
+      "directory": "evidence/discovery/open-account-discovery-20261108-003207-3960",
+      "status": "succeeded",
+      "model_calls": 10,
+      "model": "gemini-3.5-flash"
+    }
+  ],
+  "pytest": {
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

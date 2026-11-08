@@ -1,0 +1,31 @@
+[
+  {
+    "name": "mockcore__member__get_savings_balance",
+    "capability": "mockcore.member.get_savings_balance@1.1.0",
+    "description": "Look up a credit union member by ID and retrieve their Share Savings balance. Side effects: safe. Business outcomes: MEMBER_NOT_FOUND, ACCOUNT_RESTRICTED.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "member_id": {
+          "type": "string",
+          "description": "Member Number to look up",
+          "pattern": "^\\d{5}$"
+        }
+      },
+      "required": [
+        "member_id"
+      ],
+      "additionalProperties": false
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "savings_balance": {
+          "type": "string",
+          "description": "Current Share Savings balance (money)"
+        }
+      }
+    },
+    "requires_approval": false
+  }
+]

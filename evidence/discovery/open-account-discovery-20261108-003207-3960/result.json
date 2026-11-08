@@ -1,0 +1,26 @@
+{
+  "run_id": "discovery-20261108-003207-3960",
+  "mode": "discovery",
+  "capability": "mockcore.member.open_sub_account",
+  "capability_version": "1.0.0",
+  "tenant": "harbor",
+  "status": "succeeded",
+  "outputs": {},
+  "steps": [],
+  "recoveries": [],
+  "drift": [],
+  "interventions": [
+    {
+      "id": "int-01",
+      "reason": "agent wants to click <Submit> (Submit sub-account opening request)",
+      "kind": "needs_approval",
+      "operator": "simulated:demo-supervisor",
+      "resolution": "approve",
+      "note": "Simulated approval for synthetic local demo data only.",
+      "human_actions": [],
+      "waited_ms": 555
+    }
+  ],
+  "duration_ms": 32754,
+  "evidence_dir": "evidence/discovery/open-account-discovery-20261108-003207-3960"
+}

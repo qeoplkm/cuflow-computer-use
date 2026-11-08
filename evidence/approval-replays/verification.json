@@ -1,0 +1,20 @@
+[
+  {
+    "scenario": "01-draft-blocked",
+    "status": "blocked",
+    "code": "NOT_APPROVED",
+    "cumulative_mock_commits": 0
+  },
+  {
+    "scenario": "02-approval-required",
+    "status": "blocked",
+    "code": "APPROVAL_REQUIRED",
+    "cumulative_mock_commits": 0
+  },
+  {
+    "scenario": "03-operator-approved",
+    "status": "succeeded",
+    "code": null,
+    "cumulative_mock_commits": 1
+  }
+]

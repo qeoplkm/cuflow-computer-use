@@ -1,0 +1,40 @@
+{"capability": "mockcore.member.get_savings_balance", "version": "1.1.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "approved", "seq": 1, "ts": "2026-11-08T05:33:48.419+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:48.419+00:00", "type": "inputs_validated"}
+{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:33:48.419+00:00", "type": "session_login"}
+{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:33:48.427+00:00", "type": "step_started"}
+{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:33:48.897+00:00", "type": "policy_check"}
+{"step": "login_user_id", "ms": 488, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:33:48.915+00:00", "type": "step_ok"}
+{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:33:48.916+00:00", "type": "step_started"}
+{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:33:48.921+00:00", "type": "policy_check"}
+{"step": "login_password", "ms": 26, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:33:48.942+00:00", "type": "step_ok"}
+{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:33:48.943+00:00", "type": "step_started"}
+{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:33:48.949+00:00", "type": "policy_check"}
+{"step": "login_sign_on", "ms": 531, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:33:49.474+00:00", "type": "step_ok"}
+{"seq": 13, "ts": "2026-11-08T05:33:49.488+00:00", "type": "session_established"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 14, "ts": "2026-11-08T05:33:49.488+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:33:49.515+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 557, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:33:50.046+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 17, "ts": "2026-11-08T05:33:50.046+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:33:50.072+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 34, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:33:50.081+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:33:50.081+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:33:50.101+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 532, "locator": "role(role='button', name='Search')", "seq": 22, "ts": "2026-11-08T05:33:50.613+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 23, "ts": "2026-11-08T05:33:50.613+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 24, "ts": "2026-11-08T05:33:50.635+00:00", "type": "policy_check"}
+{"outcome": "core_system_error", "kind": "failure", "code": "CORE_SYSTEM_ERROR", "step": "click_select", "seq": 25, "ts": "2026-11-08T05:33:51.139+00:00", "type": "outcome_detected"}
+{"reason": "core_system_error", "relogin": false, "attempt": 1, "seq": 26, "ts": "2026-11-08T05:33:51.139+00:00", "type": "flow_restart"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 27, "ts": "2026-11-08T05:33:51.619+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 28, "ts": "2026-11-08T05:33:51.642+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 556, "locator": "role(role='link', name='Member Inquiry')", "seq": 29, "ts": "2026-11-08T05:33:52.175+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 30, "ts": "2026-11-08T05:33:52.175+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 31, "ts": "2026-11-08T05:33:52.203+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 37, "locator": "role(role='textbox', name='Member Number')", "seq": 32, "ts": "2026-11-08T05:33:52.213+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 33, "ts": "2026-11-08T05:33:52.213+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 34, "ts": "2026-11-08T05:33:52.232+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 521, "locator": "role(role='button', name='Search')", "seq": 35, "ts": "2026-11-08T05:33:52.735+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 36, "ts": "2026-11-08T05:33:52.735+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 37, "ts": "2026-11-08T05:33:52.759+00:00", "type": "policy_check"}
+{"outcome": "core_system_error", "kind": "failure", "code": "CORE_SYSTEM_ERROR", "step": "click_select", "seq": 38, "ts": "2026-11-08T05:33:53.270+00:00", "type": "outcome_detected"}
+{"code": "APP_ERROR", "step": "click_select", "message": "The core system returned a system error page (MCX-500) [CORE_SYSTEM_ERROR]", "expected": null, "seq": 39, "ts": "2026-11-08T05:33:53.319+00:00", "type": "failure"}
+{"status": "failed", "outputs": {}, "outcome": null, "error": "APP_ERROR", "recoveries": 1, "drift": 0, "interventions": 0, "ms": 4900, "seq": 40, "ts": "2026-11-08T05:33:53.319+00:00", "type": "replay_finished"}

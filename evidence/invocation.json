@@ -1,0 +1,9 @@
+{
+  "interface": "cuflow invoke",
+  "capability": "mockcore.member.get_savings_balance",
+  "version": "1.1.0",
+  "status": "succeeded",
+  "output_type": "decimal string",
+  "output_matches_synthetic_record": true,
+  "model_calls": 0
+}

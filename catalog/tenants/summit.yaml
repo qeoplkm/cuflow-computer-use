@@ -1,0 +1,71 @@
+schema_version: cuflow.tenant/v1
+tenant: summit
+display_name: Summit Example Bank
+product: mockcore
+product_version: 4.3.0
+base_url: http://127.0.0.1:8766
+secrets:
+  operator_username: env:CUFLOW_SECRET_SUMMIT_OPERATOR_USERNAME
+  operator_password: env:CUFLOW_SECRET_SUMMIT_OPERATOR_PASSWORD
+policy:
+  allowed_origins:
+  - http://127.0.0.1:8766
+  allowed_paths:
+  - /
+  - /login
+  - /main
+  - /banner
+  - /nav
+  - /work/*
+  denied_paths:
+  - /__admin*
+  - /logout
+  allowed_actions:
+  - click
+  - fill
+  - select
+  - press
+  - navigate
+  - extract
+  irreversible_keywords:
+  - submit
+  - confirm
+  - post
+  - transfer
+  - delete
+  - close account
+  - approve
+  - send
+  - authorize
+  - disburse
+  on_irreversible: require_approval
+overrides:
+  mockcore.member.get_savings_balance:
+    applies_to: 1.x
+    reason: Four reviewed label changes in Summit 4.3.0.
+    targets:
+      member_inquiry_link:
+        locators:
+        - {by: role, role: link, name: Member Lookup, match: exact}
+        - by: attr
+          tag: a
+          attrs: {href: /work/inquiry}
+      member_number_text_box:
+        locators:
+        - {by: role, role: textbox, name: 'Member #', match: exact}
+        - by: attr
+          tag: input
+          attrs: {name: fld_mbr_no}
+      search_button:
+        locators:
+        - {by: role, role: button, name: Find, match: exact}
+        - by: attr
+          tag: input
+          attrs: {name: btn_srch}
+      balance_share_savings:
+        locators:
+        - by: table_cell
+          column: Current Balance
+          row_key: {column: Description, value: Share Savings, match: exact}
+          offset: 1
+        - {by: table_cell, row_label: '0000', offset: 3}

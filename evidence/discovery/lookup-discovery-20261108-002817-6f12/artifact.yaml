@@ -1,0 +1,145 @@
+schema_version: cuflow.capability/v1
+id: mockcore.member.get_savings_balance
+version: 1.0.0
+title: Member get savings balance
+description: Look up a member by member ID and extract their Share Savings account balance.
+app: {product: mockcore, versions: '>=4.0,<5', surface: web}
+requires_session: true
+inputs:
+- {name: member_id, type: string, description: Member ID / Number, pattern: ^\d+$, sensitivity: pii}
+outputs:
+- {name: savings_balance, type: money, description: Share Savings balance, sensitivity: financial}
+side_effects: safe
+targets:
+  member_inquiry_link:
+    description: Member Inquiry link
+    frame: nav
+    locators:
+    - {by: role, role: link, name: Member Inquiry}
+    - by: attr
+      tag: a
+      attrs: {href: /work/inquiry}
+    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td > a'}
+    bbox_hint: {x: 12, y: 38, w: 111, h: 17}
+  member_number_text_box:
+    description: Member Number text box
+    frame: work
+    locators:
+    - {by: role, role: textbox, name: Member Number}
+    - by: attr
+      tag: input
+      attrs: {name: fld_mbr_no}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > input
+    bbox_hint: {x: 142, y: 42, w: 69, h: 21}
+  search_button:
+    description: Search button
+    frame: work
+    locators:
+    - {by: role, role: button, name: Search}
+    - by: attr
+      tag: input
+      attrs: {name: btn_srch}
+    - by: css
+      css: body > font > form > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > input:nth-of-type(1)
+    bbox_hint: {x: 142, y: 96, w: 58, h: 21}
+  select_link:
+    description: Select link
+    frame: work
+    locators:
+    - {by: role, role: link, name: Select, row_text: '{member_id}'}
+    - by: attr
+      tag: a
+      attrs: {href: '/work/member?m={member_id}&t=*'}
+    - {by: css, css: 'body > font > table > tbody > tr:nth-of-type(2) > td:nth-of-type(4) > a'}
+    bbox_hint: {x: 304, y: 165, w: 44, h: 17}
+  balance_share_savings:
+    description: '"Balance" cell of the row where Description = "Share Savings"'
+    frame: work
+    locators:
+    - by: table_cell
+      column: Balance
+      row_key: {column: Description, value: Share Savings}
+    - {by: table_cell, row_label: '0000', offset: 3}
+    - by: css
+      css: body > font > table:nth-of-type(2) > tbody > tr:nth-of-type(2) > td:nth-of-type(4)
+    bbox_hint: {x: 209, y: 241, w: 76, h: 26}
+steps:
+- id: click_member_inquiry
+  intent: Navigate to Member Inquiry
+  action:
+    type: click
+    target: {ref: member_inquiry_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - {kind: location, pattern: /work/inquiry, frame: work}
+    - kind: element
+      target: {ref: member_number_text_box}
+  actor: agent
+- id: fill_member_number
+  intent: Enter member number for inquiry
+  action:
+    type: fill
+    target: {ref: member_number_text_box}
+    value: {param: member_id}
+  risk: safe
+  idempotent: true
+  actor: agent
+- id: click_search
+  intent: Click Search button to look up member
+  action:
+    type: click
+    target: {ref: search_button}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: element
+    target: {ref: select_link}
+  actor: agent
+- id: click_select
+  intent: Select member {member_id} from search results
+  action:
+    type: click
+    target: {ref: select_link}
+  risk: safe
+  idempotent: true
+  expect:
+    kind: all
+    of:
+    - {kind: location, pattern: '/work/member?m={member_id}&t=*', frame: work}
+    - kind: element
+      target: {ref: balance_share_savings}
+  actor: agent
+- id: extract_savings_balance
+  intent: Read the Share Savings balance for member {member_id}
+  action:
+    type: extract
+    target: {ref: balance_share_savings}
+    output: savings_balance
+  risk: safe
+  idempotent: true
+  actor: agent
+success:
+  kind: all
+  of:
+  - {kind: text, pattern: MEMBER DETAIL, frame: work}
+  - {kind: location, pattern: '/work/member?m={member_id}&t=*', frame: work}
+outcomes: []
+review:
+  status: draft
+  notes:
+  - 'inputs.member_id: pattern ^\d+$ inferred from a single example; tighten it if the app enforces a format.'
+  - 'Outcomes: discovery only observed the happy path. Add the business outcomes and error states this flow can
+    hit (not found, validation, restricted) before approving.'
+provenance:
+  method: llm_discovery
+  recorded_at: '2026-11-08T05:28:36.363+00:00'
+  run_id: discovery-20261108-002817-6f12
+  model: gemini-3.5-flash
+  tenant: harbor
+  app_version: 4.2.1
+  goal_template: Look up member {member_id} and read their current Share Savings balance. Use member_id as the input
+    name, savings_balance as the output name, and member.get_savings_balance as the capability name.

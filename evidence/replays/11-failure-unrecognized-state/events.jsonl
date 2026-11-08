@@ -1,0 +1,26 @@
+{"capability": "mockcore.member.get_savings_balance", "version": "1.1.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "approved", "seq": 1, "ts": "2026-11-08T05:33:54.087+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:54.087+00:00", "type": "inputs_validated"}
+{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:33:54.087+00:00", "type": "session_login"}
+{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:33:54.097+00:00", "type": "step_started"}
+{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:33:54.580+00:00", "type": "policy_check"}
+{"step": "login_user_id", "ms": 506, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:33:54.604+00:00", "type": "step_ok"}
+{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:33:54.604+00:00", "type": "step_started"}
+{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:33:54.612+00:00", "type": "policy_check"}
+{"step": "login_password", "ms": 34, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:33:54.639+00:00", "type": "step_ok"}
+{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:33:54.639+00:00", "type": "step_started"}
+{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:33:54.646+00:00", "type": "policy_check"}
+{"step": "login_sign_on", "ms": 533, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:33:55.173+00:00", "type": "step_ok"}
+{"seq": 13, "ts": "2026-11-08T05:33:55.188+00:00", "type": "session_established"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 14, "ts": "2026-11-08T05:33:55.188+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:33:55.219+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 577, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:33:55.765+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 17, "ts": "2026-11-08T05:33:55.765+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:33:55.798+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 42, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:33:55.808+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:33:55.808+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:33:55.830+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 558, "locator": "role(role='button', name='Search')", "seq": 22, "ts": "2026-11-08T05:33:56.366+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 23, "ts": "2026-11-08T05:33:56.366+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 24, "ts": "2026-11-08T05:33:56.396+00:00", "type": "policy_check"}
+{"code": "UNRECOGNIZED_STATE", "step": "click_select", "message": "screen settled in a state that matches neither the expected postcondition nor any known outcome", "expected": "all(location work ~ /work/member?m={member_id}&t=‹token› element <\"Balance\" cell of the row where Description = \"Share Savings\">)", "seq": 25, "ts": "2026-11-08T05:33:58.962+00:00", "type": "failure"}
+{"status": "failed", "outputs": {}, "outcome": null, "error": "UNRECOGNIZED_STATE", "recoveries": 0, "drift": 0, "interventions": 0, "ms": 4875, "seq": 26, "ts": "2026-11-08T05:33:58.962+00:00", "type": "replay_finished"}
