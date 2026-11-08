@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-20261108-003324-509f",
+  "run_id": "replay-20261108-005408-2b70",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -14,35 +14,35 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 510
+      "duration_ms": 512
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 33
+      "duration_ms": 34
     },
     {
       "step_id": "acknowledge_notice",
       "status": "recovered",
       "locator": "role(role='button', name='Acknowledge')",
       "attempts": 1,
-      "duration_ms": 582
+      "duration_ms": 577
     },
     {
       "step_id": "login_sign_on",
       "status": "recovered",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 1131
+      "duration_ms": 1135
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Inquiry')",
       "attempts": 1,
-      "duration_ms": 538
+      "duration_ms": 550
     },
     {
       "step_id": "fill_member_number",
@@ -56,14 +56,14 @@
       "status": "ok",
       "locator": "role(role='button', name='Search')",
       "attempts": 1,
-      "duration_ms": 556
+      "duration_ms": 557
     },
     {
       "step_id": "click_select",
       "status": "ok",
       "locator": "role(role='link', name='Select', row_text='{member_id}')",
       "attempts": 1,
-      "duration_ms": 548
+      "duration_ms": 543
     },
     {
       "step_id": "extract_savings_balance",
@@ -98,6 +98,6 @@
   ],
   "drift": [],
   "interventions": [],
-  "duration_ms": 3415,
+  "duration_ms": 3432,
   "evidence_dir": "evidence/replays/06-recovered-interstitial-and-alert"
 }

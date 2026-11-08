@@ -80,8 +80,8 @@
  review:
 -  status: draft
 +  status: approved
-+  reviewed_by: Codex-assisted review
-+  reviewed_at: '2026-11-08T05:33:10.008+00:00'
++  reviewed_by: Shuai Yao
++  reviewed_at: '2026-11-08T05:51:31.366+00:00'
    notes:
 -  - 'inputs.member_id: pattern ^\d+$ inferred from a single example; tighten it if the app enforces a format.'
 -  - 'Outcomes: discovery only observed the happy path. Add the business outcomes and error states this flow can

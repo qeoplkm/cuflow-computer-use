@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import hashlib
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -99,7 +100,10 @@ def verify_redaction(directory):
         for account in member.accounts:
             values.extend([account.balance, account.available])
     for value in values:
-        assert value not in text, "raw synthetic sensitive value found in evidence"
+        # Whole-token match: the synthetic balance "0.00" must not match inside a
+        # timestamp such as "05:52:50.001" (a substring check made this flaky).
+        hit = re.search(rf"(?<![\w.]){re.escape(value)}(?!\w)", text)
+        assert hit is None, f"raw synthetic sensitive value found in evidence: {text[max(0, hit.start() - 60):hit.end() + 20]!r}"
 
 
 def main() -> None:

@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-20261108-003412-4665",
+  "run_id": "replay-20261108-005457-b165",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -34,61 +34,61 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 496
+      "duration_ms": 512
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 28
+      "duration_ms": 36
     },
     {
       "step_id": "login_sign_on",
       "status": "ok",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 522
+      "duration_ms": 550
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Inquiry')",
       "attempts": 1,
-      "duration_ms": 531
+      "duration_ms": 580
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "role(role='textbox', name='Member Number')",
       "attempts": 1,
-      "duration_ms": 38
+      "duration_ms": 39
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "role(role='button', name='Search')",
       "attempts": 1,
-      "duration_ms": 549
+      "duration_ms": 551
     },
     {
       "step_id": "click_select",
       "status": "ok",
       "locator": "role(role='link', name='Select', row_text='{member_id}')",
       "attempts": 1,
-      "duration_ms": 531
+      "duration_ms": 538
     },
     {
       "step_id": "extract_savings_balance",
       "status": "ok",
       "locator": "table_cell(column='Balance', row_key={'column': 'Description', 'value': 'Share Savings', 'match': 'exact'})",
       "attempts": 1,
-      "duration_ms": 31
+      "duration_ms": 34
     }
   ],
   "recoveries": [],
   "drift": [],
   "interventions": [],
-  "duration_ms": 4810,
+  "duration_ms": 5010,
   "evidence_dir": "evidence/replays/15-failure-private-detail"
 }

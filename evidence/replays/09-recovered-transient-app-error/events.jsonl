@@ -1,44 +1,44 @@
-{"capability": "mockcore.member.get_savings_balance", "version": "1.1.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "approved", "seq": 1, "ts": "2026-11-08T05:33:42.750+00:00", "type": "replay_started"}
-{"inputs": {"member_id": "‹member_id›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:33:42.750+00:00", "type": "inputs_validated"}
-{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:33:42.750+00:00", "type": "session_login"}
-{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:33:42.758+00:00", "type": "step_started"}
-{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:33:43.235+00:00", "type": "policy_check"}
-{"step": "login_user_id", "ms": 497, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:33:43.256+00:00", "type": "step_ok"}
-{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:33:43.256+00:00", "type": "step_started"}
-{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:33:43.264+00:00", "type": "policy_check"}
-{"step": "login_password", "ms": 34, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:33:43.290+00:00", "type": "step_ok"}
-{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:33:43.290+00:00", "type": "step_started"}
-{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:33:43.297+00:00", "type": "policy_check"}
-{"step": "login_sign_on", "ms": 546, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:33:43.837+00:00", "type": "step_ok"}
-{"seq": 13, "ts": "2026-11-08T05:33:43.852+00:00", "type": "session_established"}
-{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 14, "ts": "2026-11-08T05:33:43.852+00:00", "type": "step_started"}
-{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:33:43.879+00:00", "type": "policy_check"}
-{"step": "click_member_inquiry", "ms": 546, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:33:44.399+00:00", "type": "step_ok"}
-{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 17, "ts": "2026-11-08T05:33:44.399+00:00", "type": "step_started"}
-{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:33:44.427+00:00", "type": "policy_check"}
-{"step": "fill_member_number", "ms": 38, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:33:44.437+00:00", "type": "step_ok"}
-{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:33:44.437+00:00", "type": "step_started"}
-{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:33:44.457+00:00", "type": "policy_check"}
-{"step": "click_search", "ms": 559, "locator": "role(role='button', name='Search')", "seq": 22, "ts": "2026-11-08T05:33:44.997+00:00", "type": "step_ok"}
-{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 23, "ts": "2026-11-08T05:33:44.997+00:00", "type": "step_started"}
-{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 24, "ts": "2026-11-08T05:33:45.022+00:00", "type": "policy_check"}
-{"outcome": "core_system_error", "kind": "failure", "code": "CORE_SYSTEM_ERROR", "step": "click_select", "seq": 25, "ts": "2026-11-08T05:33:45.517+00:00", "type": "outcome_detected"}
-{"reason": "core_system_error", "relogin": false, "attempt": 1, "seq": 26, "ts": "2026-11-08T05:33:45.517+00:00", "type": "flow_restart"}
-{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 27, "ts": "2026-11-08T05:33:45.993+00:00", "type": "step_started"}
-{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 28, "ts": "2026-11-08T05:33:46.016+00:00", "type": "policy_check"}
-{"step": "click_member_inquiry", "ms": 522, "locator": "role(role='link', name='Member Inquiry')", "seq": 29, "ts": "2026-11-08T05:33:46.516+00:00", "type": "step_ok"}
-{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 30, "ts": "2026-11-08T05:33:46.516+00:00", "type": "step_started"}
-{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 31, "ts": "2026-11-08T05:33:46.539+00:00", "type": "policy_check"}
-{"step": "fill_member_number", "ms": 31, "locator": "role(role='textbox', name='Member Number')", "seq": 32, "ts": "2026-11-08T05:33:46.548+00:00", "type": "step_ok"}
-{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 33, "ts": "2026-11-08T05:33:46.551+00:00", "type": "step_started"}
-{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 34, "ts": "2026-11-08T05:33:46.573+00:00", "type": "policy_check"}
-{"step": "click_search", "ms": 535, "locator": "role(role='button', name='Search')", "seq": 35, "ts": "2026-11-08T05:33:47.087+00:00", "type": "step_ok"}
-{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 36, "ts": "2026-11-08T05:33:47.087+00:00", "type": "step_started"}
-{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 37, "ts": "2026-11-08T05:33:47.114+00:00", "type": "policy_check"}
-{"step": "click_select", "ms": 528, "locator": "role(role='link', name='Select', row_text='{member_id}')", "seq": 38, "ts": "2026-11-08T05:33:47.615+00:00", "type": "step_ok"}
-{"step": "extract_savings_balance", "phase": "capability", "action": "extract", "intent": "read the Share Savings account balance for member {member_id}", "seq": 39, "ts": "2026-11-08T05:33:47.615+00:00", "type": "step_started"}
-{"step": "extract_savings_balance", "allowed": true, "risk": "safe", "reason": null, "seq": 40, "ts": "2026-11-08T05:33:47.641+00:00", "type": "policy_check"}
-{"step": "extract_savings_balance", "output": "savings_balance", "value_type": "money", "value": "‹savings_balance›", "seq": 41, "ts": "2026-11-08T05:33:47.648+00:00", "type": "extracted"}
-{"step": "extract_savings_balance", "ms": 32, "locator": "table_cell(column='Balance', row_key={'column': 'Description', 'value': 'Share Savings', 'match': 'exact'})", "seq": 42, "ts": "2026-11-08T05:33:47.648+00:00", "type": "step_ok"}
-{"condition": "all(text 'MEMBER DETAIL' in frame work; location work ~ /work/member?m={member_id}&t=‹token›", "seq": 43, "ts": "2026-11-08T05:33:47.659+00:00", "type": "checkpoint_verified"}
-{"status": "succeeded", "outputs": {"savings_balance": "‹savings_balance›"}, "outcome": null, "error": null, "recoveries": 1, "drift": 0, "interventions": 0, "ms": 4908, "seq": 44, "ts": "2026-11-08T05:33:47.693+00:00", "type": "replay_finished"}
+{"capability": "mockcore.member.get_savings_balance", "version": "1.1.0", "tenant": "harbor", "tenant_patched_steps": [], "review_status": "approved", "seq": 1, "ts": "2026-11-08T05:54:26.622+00:00", "type": "replay_started"}
+{"inputs": {"member_id": "‹member_id›"}, "errors": [], "seq": 2, "ts": "2026-11-08T05:54:26.622+00:00", "type": "inputs_validated"}
+{"product": "mockcore", "seq": 3, "ts": "2026-11-08T05:54:26.622+00:00", "type": "session_login"}
+{"step": "login_user_id", "phase": "login", "action": "fill", "intent": "Enter the service operator's user id", "seq": 4, "ts": "2026-11-08T05:54:26.629+00:00", "type": "step_started"}
+{"step": "login_user_id", "allowed": true, "risk": "reversible", "reason": null, "seq": 5, "ts": "2026-11-08T05:54:27.119+00:00", "type": "policy_check"}
+{"step": "login_user_id", "ms": 516, "locator": "role(role='textbox', name='User ID')", "seq": 6, "ts": "2026-11-08T05:54:27.145+00:00", "type": "step_ok"}
+{"step": "login_password", "phase": "login", "action": "fill", "intent": "Enter the service operator's password", "seq": 7, "ts": "2026-11-08T05:54:27.145+00:00", "type": "step_started"}
+{"step": "login_password", "allowed": true, "risk": "reversible", "reason": null, "seq": 8, "ts": "2026-11-08T05:54:27.154+00:00", "type": "policy_check"}
+{"step": "login_password", "ms": 35, "locator": "role(role='textbox', name='Password')", "seq": 9, "ts": "2026-11-08T05:54:27.181+00:00", "type": "step_ok"}
+{"step": "login_sign_on", "phase": "login", "action": "click", "intent": "Sign on", "seq": 10, "ts": "2026-11-08T05:54:27.181+00:00", "type": "step_started"}
+{"step": "login_sign_on", "allowed": true, "risk": "safe", "reason": null, "seq": 11, "ts": "2026-11-08T05:54:27.187+00:00", "type": "policy_check"}
+{"step": "login_sign_on", "ms": 544, "locator": "role(role='button', name='Sign On')", "seq": 12, "ts": "2026-11-08T05:54:27.726+00:00", "type": "step_ok"}
+{"seq": 13, "ts": "2026-11-08T05:54:27.741+00:00", "type": "session_established"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 14, "ts": "2026-11-08T05:54:27.741+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 15, "ts": "2026-11-08T05:54:27.768+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 584, "locator": "role(role='link', name='Member Inquiry')", "seq": 16, "ts": "2026-11-08T05:54:28.325+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 17, "ts": "2026-11-08T05:54:28.325+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 18, "ts": "2026-11-08T05:54:28.355+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 39, "locator": "role(role='textbox', name='Member Number')", "seq": 19, "ts": "2026-11-08T05:54:28.365+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 20, "ts": "2026-11-08T05:54:28.365+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 21, "ts": "2026-11-08T05:54:28.385+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 555, "locator": "role(role='button', name='Search')", "seq": 22, "ts": "2026-11-08T05:54:28.920+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 23, "ts": "2026-11-08T05:54:28.920+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 24, "ts": "2026-11-08T05:54:28.946+00:00", "type": "policy_check"}
+{"outcome": "core_system_error", "kind": "failure", "code": "CORE_SYSTEM_ERROR", "step": "click_select", "seq": 25, "ts": "2026-11-08T05:54:29.456+00:00", "type": "outcome_detected"}
+{"reason": "core_system_error", "relogin": false, "attempt": 1, "seq": 26, "ts": "2026-11-08T05:54:29.456+00:00", "type": "flow_restart"}
+{"step": "click_member_inquiry", "phase": "capability", "action": "click", "intent": "Open Member Inquiry to look up member", "seq": 27, "ts": "2026-11-08T05:54:29.963+00:00", "type": "step_started"}
+{"step": "click_member_inquiry", "allowed": true, "risk": "safe", "reason": null, "seq": 28, "ts": "2026-11-08T05:54:29.993+00:00", "type": "policy_check"}
+{"step": "click_member_inquiry", "ms": 552, "locator": "role(role='link', name='Member Inquiry')", "seq": 29, "ts": "2026-11-08T05:54:30.516+00:00", "type": "step_ok"}
+{"step": "fill_member_number", "phase": "capability", "action": "fill", "intent": "Enter member number to search", "seq": 30, "ts": "2026-11-08T05:54:30.516+00:00", "type": "step_started"}
+{"step": "fill_member_number", "allowed": true, "risk": "safe", "reason": null, "seq": 31, "ts": "2026-11-08T05:54:30.546+00:00", "type": "policy_check"}
+{"step": "fill_member_number", "ms": 39, "locator": "role(role='textbox', name='Member Number')", "seq": 32, "ts": "2026-11-08T05:54:30.556+00:00", "type": "step_ok"}
+{"step": "click_search", "phase": "capability", "action": "click", "intent": "Search for member {member_id}", "seq": 33, "ts": "2026-11-08T05:54:30.556+00:00", "type": "step_started"}
+{"step": "click_search", "allowed": true, "risk": "safe", "reason": null, "seq": 34, "ts": "2026-11-08T05:54:30.575+00:00", "type": "policy_check"}
+{"step": "click_search", "ms": 558, "locator": "role(role='button', name='Search')", "seq": 35, "ts": "2026-11-08T05:54:31.114+00:00", "type": "step_ok"}
+{"step": "click_select", "phase": "capability", "action": "click", "intent": "Select member from search results", "seq": 36, "ts": "2026-11-08T05:54:31.114+00:00", "type": "step_started"}
+{"step": "click_select", "allowed": true, "risk": "safe", "reason": null, "seq": 37, "ts": "2026-11-08T05:54:31.140+00:00", "type": "policy_check"}
+{"step": "click_select", "ms": 542, "locator": "role(role='link', name='Select', row_text='{member_id}')", "seq": 38, "ts": "2026-11-08T05:54:31.657+00:00", "type": "step_ok"}
+{"step": "extract_savings_balance", "phase": "capability", "action": "extract", "intent": "read the Share Savings account balance for member {member_id}", "seq": 39, "ts": "2026-11-08T05:54:31.657+00:00", "type": "step_started"}
+{"step": "extract_savings_balance", "allowed": true, "risk": "safe", "reason": null, "seq": 40, "ts": "2026-11-08T05:54:31.683+00:00", "type": "policy_check"}
+{"step": "extract_savings_balance", "output": "savings_balance", "value_type": "money", "value": "‹savings_balance›", "seq": 41, "ts": "2026-11-08T05:54:31.691+00:00", "type": "extracted"}
+{"step": "extract_savings_balance", "ms": 34, "locator": "table_cell(column='Balance', row_key={'column': 'Description', 'value': 'Share Savings', 'match': 'exact'})", "seq": 42, "ts": "2026-11-08T05:54:31.691+00:00", "type": "step_ok"}
+{"condition": "all(text 'MEMBER DETAIL' in frame work; location work ~ /work/member?m={member_id}&t=‹token›", "seq": 43, "ts": "2026-11-08T05:54:31.700+00:00", "type": "checkpoint_verified"}
+{"status": "succeeded", "outputs": {"savings_balance": "‹savings_balance›"}, "outcome": null, "error": null, "recoveries": 1, "drift": 0, "interventions": 0, "ms": 5078, "seq": 44, "ts": "2026-11-08T05:54:31.736+00:00", "type": "replay_finished"}

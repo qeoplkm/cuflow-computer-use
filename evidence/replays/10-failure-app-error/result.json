@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-\u2039card\u203a62e3",
+  "run_id": "replay-20261108-005432-9c35",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -37,63 +37,63 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 488
+      "duration_ms": 510
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 26
+      "duration_ms": 35
     },
     {
       "step_id": "login_sign_on",
       "status": "ok",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 531
+      "duration_ms": 538
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Inquiry')",
       "attempts": 1,
-      "duration_ms": 557
+      "duration_ms": 584
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "role(role='textbox', name='Member Number')",
       "attempts": 1,
-      "duration_ms": 34
+      "duration_ms": 40
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "role(role='button', name='Search')",
       "attempts": 1,
-      "duration_ms": 532
+      "duration_ms": 550
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Inquiry')",
       "attempts": 1,
-      "duration_ms": 556
+      "duration_ms": 555
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "role(role='textbox', name='Member Number')",
       "attempts": 1,
-      "duration_ms": 37
+      "duration_ms": 38
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "role(role='button', name='Search')",
       "attempts": 1,
-      "duration_ms": 521
+      "duration_ms": 554
     }
   ],
   "recoveries": [
@@ -107,6 +107,6 @@
   ],
   "drift": [],
   "interventions": [],
-  "duration_ms": 4900,
+  "duration_ms": 5050,
   "evidence_dir": "evidence/replays/10-failure-app-error"
 }

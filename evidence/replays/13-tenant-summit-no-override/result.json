@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-\u2039card\u203a04e5",
+  "run_id": "replay-20261108-005450-7513",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -14,56 +14,56 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 496
+      "duration_ms": 517
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 28
+      "duration_ms": 33
     },
     {
       "step_id": "login_sign_on",
       "status": "ok",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 524
+      "duration_ms": 548
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "attr(tag='a', attrs={'href': '/work/inquiry'})",
       "attempts": 1,
-      "duration_ms": 564
+      "duration_ms": 585
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "attr(tag='input', attrs={'name': 'fld_mbr_no'})",
       "attempts": 1,
-      "duration_ms": 36
+      "duration_ms": 39
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "attr(tag='input', attrs={'name': 'btn_srch'})",
       "attempts": 1,
-      "duration_ms": 545
+      "duration_ms": 550
     },
     {
       "step_id": "click_select",
       "status": "ok",
       "locator": "role(role='link', name='Select', row_text='{member_id}')",
       "attempts": 1,
-      "duration_ms": 519
+      "duration_ms": 542
     },
     {
       "step_id": "extract_savings_balance",
       "status": "ok",
       "locator": "table_cell(row_label='0000', offset=3)",
       "attempts": 1,
-      "duration_ms": 31
+      "duration_ms": 34
     }
   ],
   "recoveries": [],
@@ -98,6 +98,6 @@
     }
   ],
   "interventions": [],
-  "duration_ms": 2779,
+  "duration_ms": 2888,
   "evidence_dir": "evidence/replays/13-tenant-summit-no-override"
 }

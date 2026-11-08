@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-20261108-003409-3706",
+  "run_id": "replay-20261108-005453-f937",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -14,49 +14,49 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 497
+      "duration_ms": 513
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 28
+      "duration_ms": 35
     },
     {
       "step_id": "login_sign_on",
       "status": "ok",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 524
+      "duration_ms": 550
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Lookup')",
       "attempts": 1,
-      "duration_ms": 567
+      "duration_ms": 582
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "role(role='textbox', name='Member #')",
       "attempts": 1,
-      "duration_ms": 39
+      "duration_ms": 38
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "role(role='button', name='Find')",
       "attempts": 1,
-      "duration_ms": 545
+      "duration_ms": 554
     },
     {
       "step_id": "click_select",
       "status": "ok",
       "locator": "role(role='link', name='Select', row_text='{member_id}')",
       "attempts": 1,
-      "duration_ms": 540
+      "duration_ms": 538
     },
     {
       "step_id": "extract_savings_balance",
@@ -69,6 +69,6 @@
   "recoveries": [],
   "drift": [],
   "interventions": [],
-  "duration_ms": 2807,
+  "duration_ms": 2883,
   "evidence_dir": "evidence/replays/14-tenant-summit-with-override"
 }

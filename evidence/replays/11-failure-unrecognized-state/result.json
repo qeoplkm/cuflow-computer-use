@@ -1,5 +1,5 @@
 {
-  "run_id": "replay-20261108-003353-d7e2",
+  "run_id": "replay-20261108-005438-57a3",
   "mode": "replay",
   "capability": "mockcore.member.get_savings_balance",
   "capability_version": "1.1.0",
@@ -36,47 +36,47 @@
       "status": "ok",
       "locator": "role(role='textbox', name='User ID')",
       "attempts": 1,
-      "duration_ms": 506
+      "duration_ms": 513
     },
     {
       "step_id": "login_password",
       "status": "ok",
       "locator": "role(role='textbox', name='Password')",
       "attempts": 1,
-      "duration_ms": 34
+      "duration_ms": 35
     },
     {
       "step_id": "login_sign_on",
       "status": "ok",
       "locator": "role(role='button', name='Sign On')",
       "attempts": 1,
-      "duration_ms": 533
+      "duration_ms": 552
     },
     {
       "step_id": "click_member_inquiry",
       "status": "ok",
       "locator": "role(role='link', name='Member Inquiry')",
       "attempts": 1,
-      "duration_ms": 577
+      "duration_ms": 579
     },
     {
       "step_id": "fill_member_number",
       "status": "ok",
       "locator": "role(role='textbox', name='Member Number')",
       "attempts": 1,
-      "duration_ms": 42
+      "duration_ms": 40
     },
     {
       "step_id": "click_search",
       "status": "ok",
       "locator": "role(role='button', name='Search')",
       "attempts": 1,
-      "duration_ms": 558
+      "duration_ms": 553
     }
   ],
   "recoveries": [],
   "drift": [],
   "interventions": [],
-  "duration_ms": 4875,
+  "duration_ms": 4974,
   "evidence_dir": "evidence/replays/11-failure-unrecognized-state"
 }

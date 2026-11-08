@@ -1,7 +1,7 @@
 {
   "capability": "mockcore.member.get_savings_balance",
   "version": "1.1.0",
-  "artifact_sha256": "125ef338cad3d3a5399a458083d1099653f9c377a64b40cc166faf738d9a05ef",
+  "artifact_sha256": "c4b991a5ac2d2fc3535ac3da35ccd75bc765ae6bb0d798faf4189d584f1132f4",
   "scenarios": [
     {
       "scenario": "01-success",
