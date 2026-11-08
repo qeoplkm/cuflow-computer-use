@@ -76,3 +76,19 @@ def test_event_payload_cannot_overwrite_event_type(tmp_path):
     rec.close()
     event = json.loads((rec.dir / "events.jsonl").read_text())
     assert event["type"] == "human_action" and event["detail_type"] == "change" and event["seq"] == 1
+
+
+@pytest.mark.parametrize(
+    "history,stuck",
+    [
+        (["A", "A", "A", "A", "A", "A"], False),  # several reads/extracts on one screen are normal
+        (["X", "A", "A", "A"], False),
+        (["A", "B", "A", "B", "A", "B"], True),  # oscillating between two screens
+        (["A", "B", "C", "A", "B", "C", "A", "B", "C"], True),
+        (["A", "B", "A", "B", "A", "C"], False),
+    ],
+)
+def test_screen_cycle_detection_ignores_unchanged_screen(history, stuck):
+    from cuflow.discovery import screen_cycle
+
+    assert screen_cycle(history) is stuck

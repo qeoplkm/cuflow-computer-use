@@ -25,7 +25,7 @@ The lookup's five actions are followed by a model `done` call. The open-account 
 has nine actions, with Submit recorded as irreversible and non-idempotent. Approval is
 simulated; this does not claim an authenticated independent human authorized a real account.
 
-Latest full validation: **77 tests passed** on 2026-11-08, plus 15 lookup replay scenarios,
+Latest full validation: **82 tests passed** on 2026-11-08, plus 15 lookup replay scenarios,
 three approval replay checks and the agent-facing CLI invocation.
 
 ## Reproduce and verify

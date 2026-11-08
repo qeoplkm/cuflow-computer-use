@@ -129,7 +129,7 @@ TOOLS = [
     ),
     ToolSpec(
         "press_key",
-        "Press a keyboard key (e.g. Enter, Tab), optionally on a specific control.",
+        "Press a keyboard key (e.g. Enter, Tab) on a specific control (a target is required).",
         {
             "type": "object",
             "properties": {"key": {"type": "string"}, "ref": _REF, "intent": _INTENT, "risk": _RISK},
@@ -647,9 +647,18 @@ class Discovery:
 
     def _is_stuck(self) -> bool:
         repeated = len(self._last_calls) >= 3 and len(set(self._last_calls[-3:])) == 1
-        cycle = any(len(self._screen_history) >= width * 3 and
-                    self._screen_history[-width * 3:] == self._screen_history[-width:] * 3 for width in (1, 2, 3))
-        return self._bad >= 3 or self._no_progress >= 3 or repeated or cycle
+        return self._bad >= 3 or self._no_progress >= 3 or repeated or screen_cycle(self._screen_history)
+
+
+def screen_cycle(history: list[str]) -> bool:
+    """Oscillation between 2-3 *different* screens, repeated three times (A,B,A,B,A,B).
+    An unchanged screen is not a cycle: several reads on one screen are normal, and
+    "clicked but nothing changed" is already counted by Discovery._no_progress."""
+    for width in (2, 3):
+        window = history[-width * 3:]
+        if len(window) == width * 3 and len(set(window)) > 1 and window == history[-width:] * 3:
+            return True
+    return False
 
 
 def _trace_json(t: RecordedStep) -> dict[str, Any]:

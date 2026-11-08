@@ -35,7 +35,7 @@
     }
   ],
   "pytest": {
-    "tests": 77,
+    "tests": 82,
     "failures": 0,
     "errors": 0,
     "skipped": 0
